@@ -8,4 +8,5 @@
     <color name="main_color4">#615C60</color>
     <color name="gray_000">#FDFDFD</color>
     <color name="gray_600">#7C7C7C</color>
+    <color name="transparent">#00000000</color>
 </resources>
