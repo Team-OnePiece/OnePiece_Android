@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="arrow_back_style">
+    <style name="account_img_arrow">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop"></item>
+        <item name="android:src">@drawable/arrow_back</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+    </style>
+    <style name="account_text_account">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">회원가입</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/orbit</item>
+        <item name="android:layout_marginTop">14dp</item>
+    </style>
+    <style name="account_btn_next">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="layout_constraintWidth_percent">0.9</item>
+        <item name="android:background">@drawable/btn_radius</item>
+        <item name="android:backgroundTint">@color/main_color1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_000</item>
+        <item name="android:fontFamily">@font/orbit</item>
     </style>
 </resources>

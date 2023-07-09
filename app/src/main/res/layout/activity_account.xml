@@ -9,22 +9,12 @@
 
     <ImageView
         android:id="@+id/img_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/arrow_back"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="24dp"
+        style="@style/account_img_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/text_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="회원가입"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/orbit"
-        android:layout_marginTop="14dp"
+        style="@style/account_text_account"
         app:layout_constraintStart_toEndOf="@+id/img_arrow"
         app:layout_constraintTop_toTopOf="parent"/>
     
@@ -35,6 +25,7 @@
         app:layout_constraintWidth_percent="0.65"
         android:background="@drawable/edit_background"
         android:hint="아이디"
+        android:textSize="16sp"
         android:fontFamily="@font/orbit"
         android:textColorHint="@color/gray_600"
         app:layout_constraintStart_toStartOf="@+id/img_arrow"
@@ -63,7 +54,9 @@
         app:layout_constraintWidth_percent="0.9"
         android:background="@drawable/edit_background"
         android:hint="비밀번호"
+        android:textSize="16sp"
         android:fontFamily="@font/orbit"
+        android:textColorHint="@color/gray_600"
         android:layout_marginTop="10dp"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/edit_id"
@@ -79,16 +72,10 @@
         app:layout_constraintBottom_toBottomOf="@id/edit_pw"/>
     
     <Button
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:layout_constraintWidth_percent="0.9"
-        android:background="@drawable/btn_radius"
-        android:backgroundTint="@color/main_color1"
-        android:text="입력하세요"
-        android:textSize="16sp"
-        android:textColor="@color/gray_000"
-        android:fontFamily="@font/orbit"
-        android:layout_marginTop="65dp"
+        android:id="@+id/btn_next"
+        style="@style/account_btn_next"
+        android:text="다음"
+        android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_pw"/>
