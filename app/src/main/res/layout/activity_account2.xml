@@ -20,66 +20,56 @@
     
     <androidx.cardview.widget.CardView
         android:id="@+id/card_img"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:cardCornerRadius="75dp"
+        android:layout_width="146dp"
+        android:layout_height="146dp"
+        app:cardCornerRadius="73dp"
         android:backgroundTint="@color/gray_000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_account"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="40dp">
         <ImageButton
+            android:id="@+id/btn_add"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/add_picture"
             android:background="@color/transparent"/>
     </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/text_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="추가하기"
+        android:fontFamily="@font/orbit"
+        android:textSize="14sp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toStartOf="@id/card_img"
+        app:layout_constraintEnd_toEndOf="@id/card_img"
+        app:layout_constraintTop_toBottomOf="@id/card_img"
+        />
 
     <EditText
         android:id="@+id/edit_grade"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:layout_constraintWidth_percent="0.28"
-        android:background="@drawable/edit_background"
         android:hint="학년"
-        android:inputType="number"
-        android:fontFamily="@font/orbit"
-        android:textSize="16sp"
-        android:textColorHint="@color/gray_600"
-        android:layout_marginStart="-3dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintStart_toStartOf="@+id/img_arrow"
-        app:layout_constraintTop_toBottomOf="@+id/card_img"/>
+        style="@style/account2_edit_info"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/edit_class"
+        app:layout_constraintTop_toTopOf="@+id/edit_class"/>
     <EditText
         android:id="@+id/edit_class"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:layout_constraintWidth_percent="0.28"
-        android:background="@drawable/edit_background"
         android:hint="반"
-        android:inputType="number"
-        android:fontFamily="@font/orbit"
-        android:textSize="16sp"
-        android:textColorHint="@color/gray_600"
-        app:layout_constraintStart_toEndOf="@+id/edit_grade"
-        app:layout_constraintTop_toBottomOf="@+id/card_img"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="25dp"/>
+        style="@style/account2_edit_info"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@id/card_img"
+        app:layout_constraintEnd_toEndOf="@id/card_img"
+        app:layout_constraintTop_toBottomOf="@+id/text_add" />
     <EditText
         android:id="@+id/edit_number"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:layout_constraintWidth_percent="0.28"
-        android:background="@drawable/edit_background"
+        style="@style/account2_edit_info"
         android:hint="번호"
-        android:inputType="number"
-        android:fontFamily="@font/orbit"
-        android:textSize="16sp"
-        android:textColorHint="@color/gray_600"
-        android:layout_marginTop="25dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/edit_class"
-        app:layout_constraintTop_toBottomOf="@+id/card_img"/>
+        app:layout_constraintTop_toTopOf="@id/edit_class"/>
 
     <EditText
         android:id="@+id/edit_nick"
@@ -89,34 +79,26 @@
         android:background="@drawable/edit_background"
         android:hint="별명"
         android:textColorHint="@color/gray_600"
+        android:textColor="@color/black"
         android:fontFamily="@font/orbit"
         android:textSize="16sp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/edit_grade"
-        app:layout_constraintTop_toBottomOf="@+id/edit_grade"/>
+        app:layout_constraintTop_toBottomOf="@+id/edit_class"/>
     <Button
         android:id="@+id/btn_check"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:layout_constraintWidth_percent="0.23"
-        android:background="@drawable/btn_radius"
-        android:backgroundTint="@color/main_color1"
-        android:text="중복확인"
-        android:textColor="@color/gray_000"
-        android:textSize="14sp"
-        android:fontFamily="@font/orbit"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="6dp"
+        style="@style/account_btn_check"
+        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/edit_nick"
-        app:layout_constraintTop_toBottomOf="@+id/edit_number" />
+         app:layout_constraintTop_toTopOf="@+id/edit_nick"/>
 
     <Button
         android:id="@+id/btn_next"
         style="@style/account_btn_next"
         android:text="회원가입"
         android:layout_marginTop="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/edit_nick"
+        app:layout_constraintEnd_toEndOf="@id/btn_check"
         app:layout_constraintTop_toBottomOf="@+id/edit_nick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
