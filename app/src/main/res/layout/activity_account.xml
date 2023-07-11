@@ -10,6 +10,7 @@
     <ImageView
         android:id="@+id/img_arrow"
         style="@style/img_arrow"
+        android:contentDescription="return arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView

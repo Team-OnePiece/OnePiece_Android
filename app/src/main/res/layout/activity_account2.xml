@@ -10,6 +10,7 @@
     <ImageView
         android:id="@+id/img_arrow"
         style="@style/img_arrow"
+        android:contentDescription="return arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
@@ -33,7 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/add_picture"
-            android:background="@color/transparent"/>
+            android:background="@color/transparent"
+            android:contentDescription="add img"/>
     </androidx.cardview.widget.CardView>
     <TextView
         android:id="@+id/text_add"
