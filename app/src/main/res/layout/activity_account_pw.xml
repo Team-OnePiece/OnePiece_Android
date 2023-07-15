@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountPwActivity">
+
+    <ImageView
+        android:id="@+id/img_account_pw_arrow"
+        style="@style/account_img_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/text_account_pw_account"
+        style="@style/account_text_account"
+        app:layout_constraintStart_toEndOf="@+id/img_account_pw_arrow"
+        app:layout_constraintTop_toTopOf="@+id/img_account_pw_arrow"/>
+    <ImageView
+        android:id="@+id/img_account_pw_step"
+        style="@style/account_img_step"
+        android:src="@drawable/account_pw_step"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_account_pw_account"/>
+
+    <EditText
+        android:id="@+id/edit_account_pw_pw"
+        style="@style/account_edit_pw"
+        android:hint="비밀번호"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="@id/btn_account_pw_next"
+        app:layout_constraintEnd_toEndOf="@id/btn_account_pw_next"
+        app:layout_constraintTop_toBottomOf="@+id/img_account_pw_step"/>
+    <ImageButton
+        android:id="@+id/btn_account_pw_eye_pw"
+        style="@style/btn_edit_pw_eye"
+        android:src="@drawable/edit_pw_close_eye"
+        app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_account_pw_pw"
+        app:layout_constraintEnd_toEndOf="@+id/edit_account_pw_pw"/>
+
+    <EditText
+        android:id="@+id/edit_account_pw_pw_check"
+        style="@style/account_edit_pw"
+        android:layout_marginTop="20dp"
+        android:hint="비밀번호 확인"
+        app:layout_constraintStart_toStartOf="@+id/edit_account_pw_pw"
+        app:layout_constraintEnd_toEndOf="@id/edit_account_pw_pw"
+        app:layout_constraintTop_toBottomOf="@id/edit_account_pw_pw"/>
+    <ImageButton
+        android:id="@+id/btn_account_pw_eye_pw_check"
+        style="@style/btn_edit_pw_eye"
+        android:src="@drawable/edit_pw_close_eye"
+        app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw_check"
+        app:layout_constraintBottom_toBottomOf="@id/edit_account_pw_pw_check"
+        app:layout_constraintEnd_toEndOf="@id/edit_account_pw_pw_check"/>
+
+    <Button
+        android:id="@+id/btn_account_pw_next"
+        style="@style/account_btn_next"
+        android:text="다음"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

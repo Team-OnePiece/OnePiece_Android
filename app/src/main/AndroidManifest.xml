@@ -13,20 +13,20 @@
         android:theme="@style/Theme.OnePiece_android"
         tools:targetApi="31">
         <activity
-            android:name=".AccountActivity4"
+            android:name=".AccountNickActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".AccountActivity3"
+            android:name=".AccountStudentActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".AccountActivity2"
+            android:name=".AccountPwActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
-            android:name=".AccountActivity1"
+            android:name=".AccountIdActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize">
         </activity>

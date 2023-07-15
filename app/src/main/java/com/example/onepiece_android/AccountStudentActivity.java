@@ -6,21 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.onepiece_android.databinding.ActivityAccount2Binding;
+import com.example.onepiece_android.databinding.ActivityAccount3Binding;
 
-public class AccountActivity2 extends AppCompatActivity {
-    private ActivityAccount2Binding binding;
+public class AccountStudentActivity extends AppCompatActivity {
+    private ActivityAccount3Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityAccount2Binding.inflate(getLayoutInflater());
+        binding = ActivityAccount3Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AccountActivity3.class);
+                Intent intent = new Intent(getApplicationContext(), AccountNickActivity.class);
                 startActivity(intent);
             }
         });

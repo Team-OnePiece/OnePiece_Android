@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="img_arrow">
+    <style name="account_img_arrow">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:src">@drawable/arrow_back</item>
+        <item name="android:src">@drawable/account_arrow_back</item>
         <item name="android:layout_marginTop">18dp</item>
         <item name="android:layout_marginStart">24dp</item>
     </style>
@@ -45,13 +45,13 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:inputType">textPassword</item>
     </style>
-    <style name="btn_img_edit_eye">
+    <style name="btn_edit_pw_eye">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@color/transparent</item>
         <item name="android:layout_marginEnd">12dp</item>
     </style>
-    <style name="account3_edit_info">
+    <style name="account_student_edit_info">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">50dp</item>
         <item name="layout_constraintWidth_percent">0.28</item>
