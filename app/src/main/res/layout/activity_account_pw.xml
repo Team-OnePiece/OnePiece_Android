@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
-        android:id="@+id/text_account_pw_account"
+        android:id="@+id/text_account_pw_signup"
         style="@style/account_text_account"
         app:layout_constraintStart_toEndOf="@+id/img_account_pw_arrow"
         app:layout_constraintTop_toTopOf="@+id/img_account_pw_arrow"/>
@@ -22,7 +22,7 @@
         android:src="@drawable/account_pw_step"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_account_pw_account"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_account_pw_signup"/>
 
     <EditText
         android:id="@+id/edit_account_pw_pw"
@@ -55,6 +55,18 @@
         app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw_check"
         app:layout_constraintBottom_toBottomOf="@id/edit_account_pw_pw_check"
         app:layout_constraintEnd_toEndOf="@id/edit_account_pw_pw_check"/>
+    <TextView
+        android:id="@+id/text_account_pw_wrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호가 일치하지 않습니다"
+        android:textColor="#F00"
+        android:fontFamily="@font/orbit"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/edit_account_pw_pw_check"
+        app:layout_constraintTop_toBottomOf="@id/edit_account_pw_pw_check"
+        android:layout_marginStart="3dp"/>
 
     <Button
         android:id="@+id/btn_account_pw_next"

@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
-        android:id="@+id/text_account_nick_account"
+        android:id="@+id/text_account_nick_signup"
         style="@style/account_text_account"
         app:layout_constraintStart_toEndOf="@+id/img_account_nick_arrow"
         app:layout_constraintTop_toTopOf="@+id/img_account_nick_arrow"/>
@@ -20,7 +20,7 @@
         android:id="@+id/img_account_nick_step"
         style="@style/account_img_step"
         android:src="@drawable/account_nick_step"
-        app:layout_constraintTop_toBottomOf="@+id/text_account_nick_account"
+        app:layout_constraintTop_toBottomOf="@+id/text_account_nick_signup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
     
@@ -36,6 +36,7 @@
         android:textColor="@color/black"
         android:fontFamily="@font/orbit"
         android:layout_marginTop="50dp"
+        android:inputType="text"
         app:layout_constraintTop_toBottomOf="@id/img_account_nick_step"
         app:layout_constraintStart_toStartOf="@id/btn_account_nick_next"/>
     <Button

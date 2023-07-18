@@ -11,47 +11,51 @@
         android:id="@+id/img_account_id_arrow"
         style="@style/account_img_arrow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/text_account_id_account"
+        android:id="@+id/text_account_id_signup"
         style="@style/account_text_account"
         app:layout_constraintStart_toEndOf="@+id/img_account_id_arrow"
-        app:layout_constraintTop_toTopOf="@+id/img_account_id_arrow"/>
+        app:layout_constraintTop_toTopOf="@+id/img_account_id_arrow" />
+
     <ImageView
         android:id="@+id/img_account_id_step"
         style="@style/account_img_step"
         android:src="@drawable/account_id_step"
-        app:layout_constraintTop_toBottomOf="@+id/text_account_id_account"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_account_id_signup" />
 
     <EditText
         android:id="@+id/edit_account_id_id"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        app:layout_constraintWidth_percent="0.65"
+        android:layout_marginTop="50dp"
         android:background="@drawable/edit_background"
+        android:fontFamily="@font/orbit"
         android:hint="아이디"
+        android:textColor="@color/black"
         android:textColorHint="@color/gray_600"
         android:textSize="16sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/orbit"
-        android:layout_marginTop="50dp"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="@id/btn_account_id_next"
-        app:layout_constraintTop_toBottomOf="@id/img_account_id_step"/>
+        app:layout_constraintTop_toBottomOf="@id/img_account_id_step"
+        app:layout_constraintWidth_percent="0.65" />
+
     <Button
         android:id="@+id/btn_account_id_check"
         style="@style/account_btn_check"
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/edit_account_id_id"
         app:layout_constraintTop_toTopOf="@id/edit_account_id_id" />
-    
+
     <Button
         android:id="@+id/btn_account_id_next"
         style="@style/account_btn_next"
         android:text="다음"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
