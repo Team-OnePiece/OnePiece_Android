@@ -27,6 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_account_id_signup" />
 
+
     <EditText
         android:id="@+id/edit_account_id_id"
         android:layout_width="0dp"
@@ -49,6 +50,7 @@
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/edit_account_id_id"
         app:layout_constraintTop_toTopOf="@id/edit_account_id_id" />
+
 
     <Button
         android:id="@+id/btn_account_id_next"

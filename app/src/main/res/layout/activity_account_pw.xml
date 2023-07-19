@@ -10,72 +10,78 @@
         android:id="@+id/img_account_pw_arrow"
         style="@style/account_img_arrow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/text_account_pw_signup"
         style="@style/account_text_account"
         app:layout_constraintStart_toEndOf="@+id/img_account_pw_arrow"
-        app:layout_constraintTop_toTopOf="@+id/img_account_pw_arrow"/>
+        app:layout_constraintTop_toTopOf="@+id/img_account_pw_arrow" />
+
     <ImageView
         android:id="@+id/img_account_pw_step"
         style="@style/account_img_step"
         android:src="@drawable/account_pw_step"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_account_pw_signup"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_account_pw_signup" />
+
 
     <EditText
         android:id="@+id/edit_account_pw_pw"
         style="@style/account_edit_pw"
-        android:hint="비밀번호"
         android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="@id/btn_account_pw_next"
+        android:hint="비밀번호"
         app:layout_constraintEnd_toEndOf="@id/btn_account_pw_next"
-        app:layout_constraintTop_toBottomOf="@+id/img_account_pw_step"/>
+        app:layout_constraintStart_toStartOf="@id/btn_account_pw_next"
+        app:layout_constraintTop_toBottomOf="@+id/img_account_pw_step" />
+
     <ImageButton
         android:id="@+id/btn_account_pw_eye_pw"
         style="@style/btn_edit_pw_eye"
         android:src="@drawable/edit_pw_close_eye"
-        app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw"
         app:layout_constraintBottom_toBottomOf="@+id/edit_account_pw_pw"
-        app:layout_constraintEnd_toEndOf="@+id/edit_account_pw_pw"/>
+        app:layout_constraintEnd_toEndOf="@+id/edit_account_pw_pw"
+        app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw" />
 
     <EditText
         android:id="@+id/edit_account_pw_pw_check"
         style="@style/account_edit_pw"
         android:layout_marginTop="20dp"
         android:hint="비밀번호 확인"
-        app:layout_constraintStart_toStartOf="@+id/edit_account_pw_pw"
         app:layout_constraintEnd_toEndOf="@id/edit_account_pw_pw"
-        app:layout_constraintTop_toBottomOf="@id/edit_account_pw_pw"/>
+        app:layout_constraintStart_toStartOf="@+id/edit_account_pw_pw"
+        app:layout_constraintTop_toBottomOf="@id/edit_account_pw_pw" />
+
     <ImageButton
         android:id="@+id/btn_account_pw_eye_pw_check"
         style="@style/btn_edit_pw_eye"
         android:src="@drawable/edit_pw_close_eye"
-        app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw_check"
         app:layout_constraintBottom_toBottomOf="@id/edit_account_pw_pw_check"
-        app:layout_constraintEnd_toEndOf="@id/edit_account_pw_pw_check"/>
+        app:layout_constraintEnd_toEndOf="@id/edit_account_pw_pw_check"
+        app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw_check" />
+
     <TextView
         android:id="@+id/text_account_pw_wrong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/orbit"
         android:text="비밀번호가 일치하지 않습니다"
         android:textColor="#F00"
-        android:fontFamily="@font/orbit"
         android:textSize="12sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@id/edit_account_pw_pw_check"
-        app:layout_constraintTop_toBottomOf="@id/edit_account_pw_pw_check"
-        android:layout_marginStart="3dp"/>
+        app:layout_constraintTop_toBottomOf="@id/edit_account_pw_pw_check" />
+
 
     <Button
         android:id="@+id/btn_account_pw_next"
         style="@style/account_btn_next"
         android:text="다음"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

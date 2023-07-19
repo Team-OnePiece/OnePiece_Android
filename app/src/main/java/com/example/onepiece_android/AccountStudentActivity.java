@@ -1,27 +1,43 @@
 package com.example.onepiece_android;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
-import com.example.onepiece_android.databinding.ActivityAccount3Binding;
+import com.example.onepiece_android.databinding.ActivityAccountStudentBinding;
 
 public class AccountStudentActivity extends AppCompatActivity {
-    private ActivityAccount3Binding binding;
-
+    private ActivityAccountStudentBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityAccount3Binding.inflate(getLayoutInflater());
+        binding = ActivityAccountStudentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnNext.setOnClickListener(new View.OnClickListener() {
+        binding.btnAccountStudentNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AccountNickActivity.class);
-                startActivity(intent);
+                int schoolNumber = Integer.parseInt(binding.editAccountStudentGrade.getText().toString());
+                int classNumber = Integer.parseInt(binding.editAccountStudentClass.getText().toString());
+                int studentNumber = Integer.parseInt(binding.editAccountStudentNumber.getText().toString());
+                if((schoolNumber >= 1 && schoolNumber <= 3) && (classNumber >= 1 && classNumber <= 4) && (studentNumber >= 1 && studentNumber <= 18)) {
+                    SignUpRequest signUpRequest = new SignUpRequest();
+                    signUpRequest.setSchoolNumber(schoolNumber);
+                    signUpRequest.setClassNumber(classNumber);
+                    signUpRequest.setStudentNumber(studentNumber);
+                    Intent intent = new Intent(getApplicationContext(), AccountNickActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getBaseContext(), "학년, 반, 번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        binding.imgAccountStudentArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
