@@ -31,10 +31,10 @@ public class AccountIdActivity extends AppCompatActivity {
                 binding = ActivityAccountIdBinding.inflate(getLayoutInflater());
                 setContentView(binding.getRoot());
 
-                binding.btnAccountIdCheck.setOnClickListener(new View.OnClickListener() {
+                binding.btnIdCheck.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String userId = binding.editAccountIdId.getText().toString();
+                        String userId = binding.editAccountId.getText().toString();
                         if (userId.length() == 0) {
                             Toast.makeText(getBaseContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
                         } else {
@@ -42,7 +42,7 @@ public class AccountIdActivity extends AppCompatActivity {
                         }
                     }
                 });
-                binding.imgAccountIdArrow.setOnClickListener(new View.OnClickListener() {
+                binding.imgAccountBack.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         finish();
@@ -52,10 +52,8 @@ public class AccountIdActivity extends AppCompatActivity {
         });
     }
     private void checkId(String userId) {
-        DuplicateIdRequest duplicateIdRequest = new DuplicateIdRequest(userId);
-
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.idDuplicate(duplicateIdRequest).enqueue(new Callback<Void>() {
+        serverApi.idDuplicate(userId).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(AccountIdActivity.this);

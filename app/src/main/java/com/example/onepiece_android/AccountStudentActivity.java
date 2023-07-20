@@ -19,26 +19,29 @@ public class AccountStudentActivity extends AppCompatActivity {
         binding.btnAccountStudentNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int schoolNumber = Integer.parseInt(binding.editAccountStudentGrade.getText().toString());
-                int classNumber = Integer.parseInt(binding.editAccountStudentClass.getText().toString());
-                int studentNumber = Integer.parseInt(binding.editAccountStudentNumber.getText().toString());
-                if((schoolNumber >= 1 && schoolNumber <= 3) && (classNumber >= 1 && classNumber <= 4) && (studentNumber >= 1 && studentNumber <= 18)) {
-                    SignUpRequest signUpRequest = new SignUpRequest();
-                    signUpRequest.setSchoolNumber(schoolNumber);
-                    signUpRequest.setClassNumber(classNumber);
-                    signUpRequest.setStudentNumber(studentNumber);
-                    Intent intent = new Intent(getApplicationContext(), AccountNickActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getBaseContext(), "학년, 반, 번호를 입력해주세요", Toast.LENGTH_SHORT).show();
-                }
+                int schoolNumber = Integer.parseInt(binding.editStudentGrade.getText().toString());
+                int classNumber = Integer.parseInt(binding.editStudentClass.getText().toString());
+                int studentNumber = Integer.parseInt(binding.editStudentNumber.getText().toString());
+                clickNext(schoolNumber, classNumber, studentNumber);
             }
         });
-        binding.imgAccountStudentArrow.setOnClickListener(new View.OnClickListener() {
+        binding.imgAccountBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+    }
+    private void clickNext(int schoolNumber, int classNumber, int studentNumber) {
+        if((schoolNumber >= 1 && schoolNumber <= 3) && (classNumber >= 1 && classNumber <= 4) && (classNumber >= 1 && classNumber <= 18)) {
+            SignUpRequest signUpRequest = new SignUpRequest();
+            signUpRequest.setSchoolNumber(schoolNumber);
+            signUpRequest.setClassNumber(classNumber);
+            signUpRequest.setStudentNumber(studentNumber);
+            Intent intent = new Intent(getApplicationContext(), AccountNickActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getBaseContext(), "학년, 반, 번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+        }
     }
 }

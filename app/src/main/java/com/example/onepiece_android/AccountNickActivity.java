@@ -23,7 +23,7 @@ public class AccountNickActivity extends AppCompatActivity {
         binding.btnAccountNickCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nickname = binding.editAccountNickNick.getText().toString();
+                String nickname = binding.editAccountNick.getText().toString();
                 if (nickname.length() == 0) {
                     Toast.makeText(getBaseContext(), "별명을 입력해주세요", Toast.LENGTH_SHORT).show();
                 } else {
@@ -31,7 +31,7 @@ public class AccountNickActivity extends AppCompatActivity {
                 }
             }
         });
-        binding.imgAccountNickArrow.setOnClickListener(new View.OnClickListener() {
+        binding.imgAccountBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -40,9 +40,8 @@ public class AccountNickActivity extends AppCompatActivity {
     }
 
     private void checkNick(String nickname) {
-        DuplicateNicknameRequest duplicateNicknameRequest = new DuplicateNicknameRequest(nickname);
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.nickDuplicate(duplicateNicknameRequest).enqueue(new Callback<Void>() {
+        serverApi.nickDuplicate(nickname).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(AccountNickActivity.this);
