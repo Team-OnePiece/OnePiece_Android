@@ -7,62 +7,65 @@
     tools:context=".AccountPwActivity">
 
     <ImageView
-        android:id="@+id/img_account_pw_arrow"
+        android:id="@+id/img_account_back"
         style="@style/account_img_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_account_pw_signup"
-        style="@style/account_text_account"
-        app:layout_constraintStart_toEndOf="@+id/img_account_pw_arrow"
-        app:layout_constraintTop_toTopOf="@+id/img_account_pw_arrow" />
+        android:id="@+id/text_account_signup"
+        style="@style/account_text_signup"
+        app:layout_constraintStart_toEndOf="@+id/img_account_back"
+        app:layout_constraintTop_toTopOf="@+id/img_account_back"
+        app:layout_constraintBottom_toBottomOf="@id/img_account_back"/>
 
     <ImageView
-        android:id="@+id/img_account_pw_step"
+        android:id="@+id/img_pw_step"
         style="@style/account_img_step"
         android:src="@drawable/account_pw_step"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_account_pw_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/text_account_signup" />
 
 
-    <EditText
-        android:id="@+id/edit_account_pw_pw"
-        style="@style/account_edit_pw"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lay_account_pw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.9"
+        app:passwordToggleEnabled="true"
         android:layout_marginTop="50dp"
-        android:hint="비밀번호"
+        app:hintEnabled="false"
+        app:layout_constraintStart_toStartOf="@+id/btn_account_pw_next"
         app:layout_constraintEnd_toEndOf="@id/btn_account_pw_next"
-        app:layout_constraintStart_toStartOf="@id/btn_account_pw_next"
-        app:layout_constraintTop_toBottomOf="@+id/img_account_pw_step" />
-
-    <ImageButton
-        android:id="@+id/btn_account_pw_eye_pw"
-        style="@style/btn_edit_pw_eye"
-        android:src="@drawable/edit_pw_close_eye"
-        app:layout_constraintBottom_toBottomOf="@+id/edit_account_pw_pw"
-        app:layout_constraintEnd_toEndOf="@+id/edit_account_pw_pw"
-        app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw" />
-
-    <EditText
-        android:id="@+id/edit_account_pw_pw_check"
-        style="@style/account_edit_pw"
-        android:layout_marginTop="20dp"
-        android:hint="비밀번호 확인"
-        app:layout_constraintEnd_toEndOf="@id/edit_account_pw_pw"
-        app:layout_constraintStart_toStartOf="@+id/edit_account_pw_pw"
-        app:layout_constraintTop_toBottomOf="@id/edit_account_pw_pw" />
-
-    <ImageButton
-        android:id="@+id/btn_account_pw_eye_pw_check"
-        style="@style/btn_edit_pw_eye"
-        android:src="@drawable/edit_pw_close_eye"
-        app:layout_constraintBottom_toBottomOf="@id/edit_account_pw_pw_check"
-        app:layout_constraintEnd_toEndOf="@id/edit_account_pw_pw_check"
-        app:layout_constraintTop_toTopOf="@+id/edit_account_pw_pw_check" />
+        app:layout_constraintTop_toBottomOf="@id/img_pw_step">
+        <EditText
+            android:id="@+id/edit_account_pw"
+            android:hint="비밀번호(16자이내 영문,숫자,특수문자)"
+            android:maxLength="16"
+            android:nextFocusDown="@id/edit_account_pw_check"
+            style="@style/account_edit_pw"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lay_account_pw_check"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.9"
+        app:passwordToggleEnabled="true"
+        app:hintEnabled="false"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="@id/lay_account_pw"
+        app:layout_constraintEnd_toEndOf="@+id/lay_account_pw"
+        app:layout_constraintTop_toBottomOf="@+id/lay_account_pw">
+        <EditText
+            android:id="@+id/edit_account_pw_check"
+            style="@style/account_edit_pw"
+            android:maxLength="16"
+            android:hint="비밀번호 확인" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/text_account_pw_wrong"
+        android:id="@+id/text_pw_wrong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -71,8 +74,8 @@
         android:textColor="#F00"
         android:textSize="12sp"
         android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@id/edit_account_pw_pw_check"
-        app:layout_constraintTop_toBottomOf="@id/edit_account_pw_pw_check" />
+        app:layout_constraintStart_toStartOf="@id/lay_account_pw_check"
+        app:layout_constraintTop_toBottomOf="@id/lay_account_pw_check" />
 
 
     <Button
