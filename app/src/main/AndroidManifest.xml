@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnePiece_android"
-        tools:targetApi="31"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".NoticeBoardActivity"
+            android:exported="false" />
         <activity
             android:name=".AccountNickActivity"
             android:exported="false"
@@ -23,7 +26,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".AccountPwActivity"
-            android:exported="true"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".AccountIdActivity"
@@ -37,8 +40,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

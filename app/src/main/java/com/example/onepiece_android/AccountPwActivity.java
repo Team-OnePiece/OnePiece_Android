@@ -18,26 +18,19 @@ public class AccountPwActivity extends AppCompatActivity {
         binding.editAccountPw.setSelection(binding.editAccountPw.length());
         binding.editAccountPwCheck.setSelection(binding.editAccountPwCheck.length());
 
-        binding.imgAccountBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        binding.imgAccountBack.setOnClickListener(view -> finish());
 
-        binding.btnAccountPwNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String userPassword = binding.editAccountPw.getText().toString();
-                String userPasswordCheck = binding.editAccountPwCheck.getText().toString();
-                if (userPassword.length() == 0) {
-                    Toast.makeText(getBaseContext(), "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
-                } else {
-                    clickNext(userPassword, userPasswordCheck);
-                }
+        binding.btnAccountPwNext.setOnClickListener(view -> {
+            String userPassword = binding.editAccountPw.getText().toString();
+            String userPasswordCheck = binding.editAccountPwCheck.getText().toString();
+            if (userPassword.length() == 0) {
+                Toast.makeText(getBaseContext(), "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+            } else {
+                clickNext(userPassword, userPasswordCheck);
             }
         });
     }
+
     private void clickNext(String userPassword, String userPasswordCheck) {
         if(userPassword.equals(userPasswordCheck)) {
             SignUpRequest signUpRequest = new SignUpRequest();

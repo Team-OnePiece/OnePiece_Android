@@ -3,9 +3,7 @@ package com.example.onepiece_android;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.view.View;
 import android.widget.Toast;
 import com.example.onepiece_android.databinding.ActivityAccountNickBinding;
 import retrofit2.Call;
@@ -20,23 +18,16 @@ public class AccountNickActivity extends AppCompatActivity {
         binding = ActivityAccountNickBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnAccountNickCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String nickname = binding.editAccountNick.getText().toString();
-                if (nickname.length() == 0) {
-                    Toast.makeText(getBaseContext(), "별명을 입력해주세요", Toast.LENGTH_SHORT).show();
-                } else {
-                    checkNick(nickname);
-                }
+        binding.btnAccountNickCheck.setOnClickListener(view -> {
+            String nickname = binding.editAccountNick.getText().toString();
+            if (nickname.length() == 0) {
+                Toast.makeText(getBaseContext(), "별명을 입력해주세요", Toast.LENGTH_SHORT).show();
+            } else {
+                checkNick(nickname);
             }
         });
-        binding.imgAccountBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+
+        binding.imgAccountBack.setOnClickListener(view -> finish());
     }
 
     private void checkNick(String nickname) {
@@ -49,19 +40,11 @@ public class AccountNickActivity extends AppCompatActivity {
                     builder.setMessage("사용 가능한 별명입니다.");
                     SignUpRequest signUpRequest = new SignUpRequest();
                     signUpRequest.setNickname(nickname);
-                    binding.btnAccountNickNext.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            signUp();
-                        }
-                    });
+                    binding.btnAccountNickNext.setOnClickListener(view -> signUp());
                 } else {
                     builder.setMessage("이미 사용된 별명입니다.");
                 }
-                builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
+                builder.setPositiveButton("확인", (dialogInterface, i) -> {
                 });
                 builder.show();
             }
@@ -71,6 +54,7 @@ public class AccountNickActivity extends AppCompatActivity {
             }
         });
     }
+
     public void signUp() {
         SignUpRequest signUpRequest = new SignUpRequest();
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
