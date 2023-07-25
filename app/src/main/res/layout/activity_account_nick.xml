@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountNickActivity">
+
+    <ImageView
+        android:id="@+id/img_account_back"
+        style="@style/account_img_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_account_signup"
+        style="@style/account_text_signup"
+        app:layout_constraintStart_toEndOf="@+id/img_account_back"
+        app:layout_constraintTop_toTopOf="@+id/img_account_back"
+        app:layout_constraintBottom_toBottomOf="@id/img_account_back"/>
+
+    <ImageView
+        android:id="@+id/img_nick_step"
+        style="@style/account_img_step"
+        android:src="@drawable/account_nick_step"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_account_signup" />
+
+
+    <EditText
+        android:id="@+id/edit_account_nick"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edit_background"
+        android:fontFamily="@font/orbit"
+        android:hint="별명(2~9자 이내 한글)"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_600"
+        android:textSize="16sp"
+        android:maxLength="9"
+        app:layout_constraintStart_toStartOf="@id/btn_account_nick_next"
+        app:layout_constraintTop_toBottomOf="@id/img_nick_step"
+        app:layout_constraintWidth_percent="0.65" />
+
+    <Button
+        android:id="@+id/btn_account_nick_check"
+        style="@style/account_btn_check"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/edit_account_nick"
+        app:layout_constraintTop_toTopOf="@id/edit_account_nick" />
+
+
+    <Button
+        android:id="@+id/btn_account_nick_next"
+        style="@style/account_btn_next"
+        android:text="다음"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
