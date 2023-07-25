@@ -11,7 +11,6 @@ public interface ServerApi {
     @POST("/user/signup")
     Call<Void> signUp(
             @Body SignUpRequest signUpRequest
-
     );
 
     @GET("/user/id/Duplicate")

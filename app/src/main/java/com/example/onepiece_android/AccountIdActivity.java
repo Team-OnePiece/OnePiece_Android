@@ -21,20 +21,13 @@ public class AccountIdActivity extends AppCompatActivity {
         binding = ActivityAccountIdBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnAccountIdNext.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), AccountPwActivity.class);
-            startActivity(intent);
-            binding = ActivityAccountIdBinding.inflate(getLayoutInflater());
-            setContentView(binding.getRoot());
-
-            binding.btnIdCheck.setOnClickListener(view1 -> {
-                String userId = binding.editAccountId.getText().toString();
-                if (userId.length() == 0) {
-                    Toast.makeText(getBaseContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
-                } else {
-                    checkId(userId);
-                }
-            });
+        binding.btnIdCheck.setOnClickListener(view1 -> {
+            String userId = binding.editAccountId.getText().toString();
+            if (userId.length() == 0) {
+                Toast.makeText(getBaseContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
+            } else {
+                checkId(userId);
+            }
         });
 
         binding.imgAccountBack.setOnClickListener(view -> finish());
