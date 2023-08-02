@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/img_account_back"
-        style="@style/account_img_arrow"
+        style="@style/account_img_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,31 +28,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_account_signup" />
 
-
     <EditText
         android:id="@+id/edit_account_id"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:layout_constraintWidth_percent="0.65"
+        style="@style/account_edit"
         android:layout_marginTop="50dp"
-        android:background="@drawable/edit_background"
-        android:fontFamily="@font/orbit"
         android:hint="아이디(영문,숫자 7~20자)"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray_600"
-        android:textSize="16sp"
         android:maxLength="20"
         app:layout_constraintStart_toStartOf="@id/btn_account_id_next"
         app:layout_constraintTop_toBottomOf="@id/img_id_step" />
 
-    <Button
-        android:id="@+id/btn_id_check"
-        style="@style/account_btn_check"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@+id/edit_account_id"
-        app:layout_constraintTop_toTopOf="@id/edit_account_id" />
-
+    <TextView
+        android:id="@+id/text_id_wrong"
+        style="@style/account_text_wrong"
+        android:text="아이디를 확인하세요"
+        app:layout_constraintStart_toStartOf="@id/edit_account_id"
+        app:layout_constraintTop_toBottomOf="@id/edit_account_id"/>
 
     <Button
         android:id="@+id/btn_account_id_next"

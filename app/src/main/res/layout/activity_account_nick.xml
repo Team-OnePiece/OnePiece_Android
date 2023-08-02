@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/img_account_back"
-        style="@style/account_img_arrow"
+        style="@style/account_img_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,28 +30,19 @@
 
     <EditText
         android:id="@+id/edit_account_nick"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/edit_background"
-        android:fontFamily="@font/orbit"
+        style="@style/account_edit"
         android:hint="별명(2~9자 이내 한글)"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray_600"
-        android:textSize="16sp"
         android:maxLength="9"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="@id/btn_account_nick_next"
-        app:layout_constraintTop_toBottomOf="@id/img_nick_step"
-        app:layout_constraintWidth_percent="0.65" />
+        app:layout_constraintTop_toBottomOf="@id/img_nick_step" />
 
-    <Button
-        android:id="@+id/btn_account_nick_check"
-        style="@style/account_btn_check"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@id/edit_account_nick"
-        app:layout_constraintTop_toTopOf="@id/edit_account_nick" />
-
+    <TextView
+        android:id="@+id/text_nick_wrong"
+        style="@style/account_text_wrong"
+        android:text="별명을 확인하세요"
+        app:layout_constraintStart_toStartOf="@id/edit_account_nick"
+        app:layout_constraintTop_toBottomOf="@id/edit_account_nick"/>
 
     <Button
         android:id="@+id/btn_account_nick_next"

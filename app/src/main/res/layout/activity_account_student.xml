@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/img_account_back"
-        style="@style/account_img_arrow"
+        style="@style/account_img_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,6 +58,12 @@
         app:layout_constraintStart_toEndOf="@id/edit_student_class"
         app:layout_constraintTop_toTopOf="@id/edit_student_class" />
 
+    <TextView
+        android:id="@+id/text_student_wrong"
+        style="@style/account_text_wrong"
+        android:text="다시 확인하세요"
+        app:layout_constraintStart_toStartOf="@id/edit_student_grade"
+        app:layout_constraintTop_toBottomOf="@id/edit_student_grade"/>
 
     <Button
         android:id="@+id/btn_account_student_next"
