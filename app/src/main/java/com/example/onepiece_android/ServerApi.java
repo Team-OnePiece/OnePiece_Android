@@ -13,13 +13,20 @@ public interface ServerApi {
             @Body SignUpRequest signUpRequest
     );
 
-    @GET("/user/id/Duplicate")
+    @GET("/user/id/duplicate")
     Call<Void> idDuplicate(
             @Query("userid") String userid
     );
 
-    @GET("/user/nickname/Duplicate")
+    @GET("/user/nickname/duplicate")
     Call<Void> nickDuplicate(
             @Query("nickname") String nickname
+    );
+
+    @GET("/user/student/id/duplicate")
+    Call<Void> studentIdDuplicate(
+            @Query("grade") int grade,
+            @Query("class_number") int classNumber,
+            @Query("number") int number
     );
 }

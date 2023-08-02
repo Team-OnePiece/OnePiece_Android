@@ -14,9 +14,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".NoticeBoardActivity"
-            android:exported="false" />
-        <activity
             android:name=".AccountNickActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

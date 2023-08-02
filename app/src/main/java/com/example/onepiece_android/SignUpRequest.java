@@ -4,9 +4,9 @@ public class SignUpRequest {
     private String userId;
     private String userPassword;
     private String nickname;
-    private int schoolNumber;
+    private int grade;
     private int classNumber;
-    private int studentNumber;
+    private int number;
 
     public String getUserId() {
         return userId;
@@ -18,13 +18,13 @@ public class SignUpRequest {
         return nickname;
     }
     public int getSchoolNumber() {
-        return schoolNumber;
+        return grade;
     }
     public int getClassNumber() {
         return classNumber;
     }
     public int getStudentNumber() {
-        return studentNumber;
+        return number;
     }
 
     public void setUserId(String userId) {
@@ -36,13 +36,13 @@ public class SignUpRequest {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
-    public void setSchoolNumber(int schoolNumber) {
-        this.schoolNumber = schoolNumber;
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
     public void setClassNumber(int classNumber) {
         this.classNumber = classNumber;
     }
-    public void setStudentNumber(int studentNumber) {
-        this.studentNumber = studentNumber;
+    public void setNumber(int number) {
+        this.number = number;
     }
 }
