@@ -5,6 +5,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+import retrofit2.http.Url;
 
 public interface ServerApi {
 
@@ -28,5 +29,15 @@ public interface ServerApi {
             @Query("grade") int grade,
             @Query("class_number") int classNumber,
             @Query("number") int number
+    );
+
+    @GET("/board/read")
+    Call<Void> readBoard(
+            @Query("tag") String[] tag,
+            @Query("place") String place,
+            @Query("nickname") String nickname,
+            @Query("profile") String profile,
+            @Query("number") String number,
+            @Query("created_at") String createdAt
     );
 }
