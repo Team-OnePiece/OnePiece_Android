@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="360dp"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lay_item_bar"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_item_profile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="12dp"
+                    app:cardCornerRadius="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/img_item_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/default_profile" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/text_item_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/orbit"
+                    android:text="별명"
+                    android:textColor="@color/gray_800"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/card_item_profile"
+                    app:layout_constraintTop_toTopOf="@id/card_item_profile" />
+
+                <TextView
+                    android:id="@+id/text_item_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/orbit"
+                    android:text="0000"
+                    android:textColor="@color/gray_800"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/text_item_nick"
+                    app:layout_constraintTop_toBottomOf="@id/text_item_nick" />
+
+                <ImageView
+                    android:id="@+id/img_item_more"
+                    android:layout_width="13dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/notice_more"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/text_item_day"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_item_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/orbit"
+                    android:text="2023-03-02"
+                    android:textColor="@color/gray_800"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_item_number"
+                    app:layout_constraintEnd_toStartOf="@id/img_item_more" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/img_item_content"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:src="@drawable/notice_example_picture"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lay_item_bar"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_item_content">
+
+                <ImageView
+                    android:id="@+id/img_item_reaction"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/notice_no_reaction"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/text_item_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/orbit"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintStart_toEndOf="@id/img_item_reaction"
+                    app:layout_constraintBottom_toBottomOf="@id/img_item_reaction"/>
+
+                <TextView
+                    android:id="@+id/text_item_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="우리집 냉장고 앞에서"
+                    android:fontFamily="@font/orbit"
+                    android:textColor="@color/gray_800"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/img_item_reaction"
+                    app:layout_constraintTop_toBottomOf="@id/img_item_reaction"/>
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/lay_item_tag"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    app:flexWrap="wrap"
+                    app:layout_constraintTop_toTopOf="@id/text_item_count"
+                    app:layout_constraintBottom_toBottomOf="@id/text_item_place"
+                    app:layout_constraintStart_toEndOf="@id/text_item_place"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/text_item_tag1"
+                        style="@style/notice_text_tag"
+                        android:text="루피"/>
+                    <TextView
+                        android:id="@+id/text_item_tag2"
+                        style="@style/notice_text_tag"
+                        android:text="멋진짱아"/>
+                    <TextView
+                        android:id="@+id/text_item_tag3"
+                        style="@style/notice_text_tag"
+                        android:text="대박사건"/>
+                    <TextView
+                        android:id="@+id/text_item_tag4"
+                        style="@style/notice_text_tag"
+                        android:text="오와"/>
+                    <TextView
+                        android:id="@+id/text_item_tag5"
+                        style="@style/notice_text_tag"
+                        android:text="원피스"/>
+                    <TextView
+                        android:id="@+id/text_item_tag6"
+                        style="@style/notice_text_tag"
+                        android:text="학교가기싫음"/>
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
