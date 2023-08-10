@@ -8,7 +8,6 @@ import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface ServerApi {
@@ -50,6 +49,6 @@ public interface ServerApi {
     @POST("/user/image/upload")
     Call<Void> profileImageUpload(
             @Header("Authorization") String token,
-            @Part MultipartBody.Part image
+            @Body MultipartBody.Part image
     );
 }
