@@ -52,10 +52,11 @@ public class AccountIdActivity extends AppCompatActivity {
                         signUpRequest.setAccount_id(userId);
                         Intent intent = new Intent(getBaseContext(), AccountPwActivity.class);
                         startActivity(intent);
-                    } else {
+                    } else if (response.code() == 409) {
                         builder.setMessage("이미 사용된 아이디입니다.");
-                        builder.setPositiveButton("확인", (dialogInterface, i) -> {
-                        }).show();
+                        builder.setPositiveButton("확인", (dialogInterface, i) -> {}).show();
+                    } else {
+                        binding.textIdWrong.setVisibility(View.VISIBLE);
                     }
                 }
                 @Override
