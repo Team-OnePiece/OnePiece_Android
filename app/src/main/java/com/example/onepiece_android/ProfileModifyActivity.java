@@ -42,8 +42,13 @@ public class ProfileModifyActivity extends AppCompatActivity {
         userInfo();
 
         binding.textProfileCheck.setOnClickListener(view -> {
-            nickname = binding.editProfileNickname.getText().toString();
-            checkNick(nickname);
+            binding.textProfileWrong.setVisibility(View.INVISIBLE);
+            if (nickname.equals(binding.editProfileNickname.getText().toString())) {
+                finish();
+            } else {
+                nickname = binding.editProfileNickname.getText().toString();
+                checkNick(nickname);
+            }
         });
 
         binding.textProfileModify.setOnClickListener(view -> changePicture());
