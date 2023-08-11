@@ -70,4 +70,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_notice_add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="@color/main_color5"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="@id/recycler_notice"
+        app:layout_constraintBottom_toBottomOf="@id/recycler_notice">
+        <ImageView
+            android:id="@+id/img_notice_add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/notice_add"/>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

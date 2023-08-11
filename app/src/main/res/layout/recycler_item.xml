@@ -91,8 +91,11 @@
 
             <ImageView
                 android:id="@+id/img_item_content"
-                android:layout_width="match_parent"
-                android:layout_height="360dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="360dp"
+                android:maxHeight="360dp"
+                android:adjustViewBounds="true"
                 android:src="@drawable/notice_example_picture"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
