@@ -19,7 +19,7 @@ public interface ServerApi {
 
     @GET("/user/id/duplicate")
     Call<Void> idDuplicate(
-            @Query("userid") String userid
+            @Query("account_id") String userid
     );
 
     @GET("/user/nickname/duplicate")

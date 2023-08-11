@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import com.example.onepiece_android.databinding.ActivityAccountIdBinding;
@@ -26,6 +27,7 @@ public class AccountIdActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.btnAccountIdNext.setOnClickListener(view -> {
+            Log.d("click", "login-next");
             String userId = binding.editAccountId.getText().toString();
             checkId(userId);
         });
@@ -47,7 +49,7 @@ public class AccountIdActivity extends AppCompatActivity {
                         builder.setPositiveButton("확인", (dialogInterface, i) -> {
                         }).show();
                         SignUpRequest signUpRequest = new SignUpRequest();
-                        signUpRequest.setUserId(userId);
+                        signUpRequest.setAccount_id(userId);
                         Intent intent = new Intent(getBaseContext(), AccountPwActivity.class);
                         startActivity(intent);
                     } else {
