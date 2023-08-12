@@ -29,4 +29,9 @@ public interface ServerApi {
             @Query("class_number") int classNumber,
             @Query("number") int number
     );
+
+    @POST("user/login")
+    Call<LoginResponse> login(
+            @Body LoginRequest loginRequest
+    );
 }
