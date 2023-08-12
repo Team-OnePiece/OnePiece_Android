@@ -3,6 +3,7 @@ package com.example.onepiece_android;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,10 +58,14 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-        binding.btnLogin.setOnClickListener(new View.OnClickListener(){
+        /* 회원 가입
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(Vi)
-        });
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), //회원가입Activity.class);
+                startActivity(intent);
+            }
+        });*/
 
         binding.etPassword.addTextChangedListener(new TextWatcher() {
             @Override
