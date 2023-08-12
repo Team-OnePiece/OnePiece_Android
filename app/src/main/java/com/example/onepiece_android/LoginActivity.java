@@ -57,6 +57,11 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
+        binding.btnLogin.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(Vi)
+        });
+
         binding.etPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -112,11 +117,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(LoginActivity.this, "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    binding.tvCheck.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, "통신 실패", Toast.LENGTH_SHORT).show();
             }
         });
     }

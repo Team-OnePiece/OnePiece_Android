@@ -10,7 +10,7 @@ import retrofit2.http.PUT;
 public interface ServerApi {
 
     @POST("user/login")
-    Call<Void> login(
+    Call<LoginResponse> login(
             @Body LoginRequest loginRequest
     );
 }
