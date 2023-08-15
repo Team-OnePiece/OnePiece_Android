@@ -2,10 +2,12 @@ package com.example.onepiece_android;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
-import retrofit2.http.Url;
 
 public interface ServerApi {
 
@@ -31,13 +33,23 @@ public interface ServerApi {
             @Query("number") int number
     );
 
-    @GET("/board/read")
-    Call<Void> readBoard(
-            @Query("tag") String[] tag,
-            @Query("place") String place,
-            @Query("nickname") String nickname,
-            @Query("profile") String profile,
-            @Query("number") String number,
-            @Query("created_at") String createdAt
+    @GET("/feed")
+    Call<ReadBoardResponse> readBoard(
+    );
+
+    @DELETE("/feed/{feedId}")
+    Call<Void> deleteBoard(
+            @Header("Authorization") String token,
+            @Path("feedId") Long feedId
+    );
+
+    @POST("/star{feedId}")
+    Call<ReactionResponse> reaction(
+            @Path("feedId") Long feedId
+    );
+
+    @DELETE("/star{feedId}")
+    Call<ReactionResponse> deleteReaction(
+            @Path("feedId") Long feedId
     );
 }

@@ -151,31 +151,6 @@
                     app:layout_constraintStart_toEndOf="@id/text_item_place"
                     app:layout_constraintEnd_toEndOf="parent">
 
-                    <TextView
-                        android:id="@+id/text_item_tag1"
-                        style="@style/notice_text_tag"
-                        android:text="루피"/>
-                    <TextView
-                        android:id="@+id/text_item_tag2"
-                        style="@style/notice_text_tag"
-                        android:text="멋진짱아"/>
-                    <TextView
-                        android:id="@+id/text_item_tag3"
-                        style="@style/notice_text_tag"
-                        android:text="대박사건"/>
-                    <TextView
-                        android:id="@+id/text_item_tag4"
-                        style="@style/notice_text_tag"
-                        android:text="오와"/>
-                    <TextView
-                        android:id="@+id/text_item_tag5"
-                        style="@style/notice_text_tag"
-                        android:text="원피스"/>
-                    <TextView
-                        android:id="@+id/text_item_tag6"
-                        style="@style/notice_text_tag"
-                        android:text="학교가기싫음"/>
-
                 </com.google.android.flexbox.FlexboxLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

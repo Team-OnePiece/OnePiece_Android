@@ -22,15 +22,17 @@
             android:layout_height="40dp"
             android:src="@drawable/onepiece_logo"
             android:layout_marginStart="12dp"
-            app:layout_constraintTop_toTopOf="@id/spinner_notice_group"
-            app:layout_constraintBottom_toBottomOf="@id/spinner_notice_group"
+            app:layout_constraintTop_toTopOf="@id/text_notice_main"
+            app:layout_constraintBottom_toBottomOf="@id/text_notice_main"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <Spinner
-            android:id="@+id/spinner_notice_group"
+        <TextView
+            android:id="@+id/text_notice_main"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.5"
+            android:layout_height="wrap_content"
+            android:text="One Piece"
+            android:textSize="22sp"
+            android:fontFamily="@font/orbit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -42,8 +44,8 @@
             android:layout_height="25dp"
             android:src="@drawable/notice_more"
             android:layout_marginEnd="20dp"
-            app:layout_constraintTop_toTopOf="@id/spinner_notice_group"
-            app:layout_constraintBottom_toBottomOf="@id/spinner_notice_group"
+            app:layout_constraintTop_toTopOf="@id/text_notice_main"
+            app:layout_constraintBottom_toBottomOf="@id/text_notice_main"
             app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
