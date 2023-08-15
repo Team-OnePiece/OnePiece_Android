@@ -92,8 +92,6 @@ public class PostUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String place = binding.etPlace.getText().toString();
-
-
                 if(!place.isEmpty()){
                     RequestBody placeRequestBody = RequestBody.create(MediaType.parse("text/plain"), place);
                     MultipartBody.Part imagePart = MultipartBody.Part.createFormData("place", place, placeRequestBody);

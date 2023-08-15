@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
@@ -61,4 +62,9 @@ public interface ServerApi {
             @Body PostModifyRequest request
     );
 
+    @DELETE("/tag/{tagId}")
+    Call<Void> deleteTag(
+            @Path("tagId") long tagId,
+            @Header("Authorization") String authorization
+    );
 }

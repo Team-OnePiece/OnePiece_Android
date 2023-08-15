@@ -29,6 +29,7 @@ public class PostModifyActivity extends AppCompatActivity {
         String accessToken = "Bearer <access-token>";
         String place = "대마고";
 
+
         postModifyApi.postModify(feedId, accessToken, place, new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {

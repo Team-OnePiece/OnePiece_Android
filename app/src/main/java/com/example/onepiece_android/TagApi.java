@@ -27,15 +27,14 @@ public class TagApi {
 
     public void createTag(Long boardId, String accessToken, String tagName){
         TagRequest tagRequest = new TagRequest(tagName);
-
         Call<TagResponse> call = serverApi.createTag(boardId, "Bearer " + accessToken, tagRequest);
         call.enqueue(new Callback<TagResponse>() {
             @Override
             public void onResponse(Call<TagResponse> call, Response<TagResponse> response) {
                 if(response.isSuccessful()) {
-                    TagResponse tagResponse = response.body();
-                    if(tagResponse != null){
-                        int tagId = tagResponse.getTagId();
+                    if(response.isSuccessful()){
+                        TagResponse tagResponse = response.body();
+                        long tagId = tagResponse.getTagId();
                         showToast("태그 생성 성공 Tag ID : " + tagId);
                     }
                 } else{
