@@ -13,9 +13,6 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +20,7 @@ import com.example.onepiece_android.databinding.ActivityPostUpBinding;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
+<<<<<<< Updated upstream
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +31,12 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+=======
+public class PostUpActivity extends AppCompatActivity {
+
+
+    private ActivityPostUpBinding binding;
+>>>>>>> Stashed changes
 
 public class PostUpActivity extends AppCompatActivity {
     private ActivityPostUpBinding binding;
@@ -47,6 +51,7 @@ public class PostUpActivity extends AppCompatActivity {
         binding = ActivityPostUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+<<<<<<< Updated upstream
         tagApi = new TagApi(this);
         ChipGroup chipGroup = binding.chipGroup;
 
@@ -138,6 +143,8 @@ public class PostUpActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+=======
+>>>>>>> Stashed changes
 
         binding.tvPlus.setOnClickListener(new View.OnClickListener() {
             @Override
