@@ -5,8 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.onepiece_android.databinding.ActivityNoticeBoardBinding;
