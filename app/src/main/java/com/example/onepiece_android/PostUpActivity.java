@@ -13,6 +13,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,6 @@ import com.example.onepiece_android.databinding.ActivityPostUpBinding;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
-<<<<<<< Updated upstream
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,15 +31,11 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-=======
 public class PostUpActivity extends AppCompatActivity {
 
 
     private ActivityPostUpBinding binding;
->>>>>>> Stashed changes
 
-public class PostUpActivity extends AppCompatActivity {
-    private ActivityPostUpBinding binding;
     private ActivityResultLauncher<Intent> galleryLauncher;
     private List<String> enteredTags = new ArrayList<>();
     private TagApi tagApi;
@@ -51,7 +47,7 @@ public class PostUpActivity extends AppCompatActivity {
         binding = ActivityPostUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-<<<<<<< Updated upstream
+
         tagApi = new TagApi(this);
         ChipGroup chipGroup = binding.chipGroup;
 
@@ -131,20 +127,6 @@ public class PostUpActivity extends AppCompatActivity {
 
 
 
-        TextView textView = binding.tvSpinner;
-        binding.spGroup.setAdapter(ArrayAdapter.createFromResource(this, R.array.arr_group, android.R.layout.simple_spinner_item));
-        binding.spGroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                textView.setText(getResources().getStringArray(R.array.arr_group)[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-=======
->>>>>>> Stashed changes
 
         binding.tvPlus.setOnClickListener(new View.OnClickListener() {
             @Override
