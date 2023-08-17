@@ -114,14 +114,15 @@
         android:layout_marginEnd="20dp"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_width="343dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_tag"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="37dp">
+        app:layout_constraintTop_toBottomOf="@+id/et_tag">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chip_group"
@@ -133,63 +134,27 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_checkgroup"
+        android:id="@+id/tv_addpicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
         android:fontFamily="@font/orbit"
-        android:text="어느 그룹에 업로드 하시겠습니까?"
-        android:textColor="@color/gray_900"
+        android:text="사진을 추가하세요사진을 추가하세요"
+        android:textColor="@color/gray_800"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_tag"
-        android:layout_marginTop="104dp"
-        android:layout_marginStart="37dp"/>
-
-    <RelativeLayout
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_checkgroup"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="37dp"
-        >
-
-        <Spinner
-            android:id="@+id/sp_group"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:background="@drawable/post_border"
-            android:theme="@style/spinner"
-            android:spinnerMode="dialog"
-            />
-
-        <TextView
-            android:id="@+id/tv_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="309dp"
-            android:text=""
-            android:textSize="20sp"
-            android:fontFamily="@font/orbit"
-            android:textColor="@color/gray_600"
-            />
-
-    </RelativeLayout>
-
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_marginTop="80dp"/>
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/img_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/add_picture"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="37dp"
-        android:layout_marginBottom="230dp"/>
+        android:src="@drawable/add_picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_addpicture"
+        android:layout_marginTop="8dp"/>
 
 
 

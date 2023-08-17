@@ -12,38 +12,25 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.onepiece_android.databinding.ActivityPostupBinding;
+import com.example.onepiece_android.databinding.ActivityPostUpBinding;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
 public class PostUpActivity extends AppCompatActivity {
-    private ActivityPostupBinding binding;
+
+
+    private ActivityPostUpBinding binding;
 
     private ActivityResultLauncher<Intent> galleryLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        binding = ActivityPostupBinding.inflate(getLayoutInflater());
+        binding = ActivityPostUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        TextView textView = binding.tvSpinner;
-        binding.spGroup.setAdapter(ArrayAdapter.createFromResource(this, R.array.arr_group, android.R.layout.simple_spinner_item));
-        binding.spGroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                textView.setText(getResources().getStringArray(R.array.arr_group)[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
 
         ChipGroup chipGroup = binding.chipGroup;
         TextView tvPlus = binding.tvPlus;
