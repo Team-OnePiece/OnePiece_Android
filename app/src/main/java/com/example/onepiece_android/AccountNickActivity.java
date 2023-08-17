@@ -43,9 +43,11 @@ public class AccountNickActivity extends AppCompatActivity {
                         SignUpRequest signUpRequest = new SignUpRequest();
                         signUpRequest.setNickname(nickname);
                         signUp();
-                    } else {
+                    } else if (response.code() == 409) {
                         builder.setMessage("이미 사용된 별명입니다.");
                         builder.setPositiveButton("확인", (dialogInterface, i) -> {}).show();
+                    } else {
+                        binding.textNickWrong.setVisibility(View.VISIBLE);
                     }
                 }
                 @Override

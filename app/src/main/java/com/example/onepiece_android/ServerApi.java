@@ -1,5 +1,6 @@
 package com.example.onepiece_android;
 
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -18,7 +19,7 @@ public interface ServerApi {
 
     @GET("/user/id/duplicate")
     Call<Void> idDuplicate(
-            @Query("userid") String userid
+            @Query("account_id") String userid
     );
 
     @GET("/user/nickname/duplicate")

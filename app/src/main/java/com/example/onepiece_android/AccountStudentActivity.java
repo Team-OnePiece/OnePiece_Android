@@ -39,7 +39,7 @@ public class AccountStudentActivity extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         SignUpRequest signUpRequest = new SignUpRequest();
                         signUpRequest.setGrade(grade);
-                        signUpRequest.setClassNumber(classNumber);
+                        signUpRequest.setClass_number(classNumber);
                         signUpRequest.setNumber(number);
                         Intent intent = new Intent(getBaseContext(), AccountNickActivity.class);
                         startActivity(intent);
