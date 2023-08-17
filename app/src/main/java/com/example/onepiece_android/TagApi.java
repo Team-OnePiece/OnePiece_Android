@@ -32,9 +32,9 @@ public class TagApi {
             @Override
             public void onResponse(Call<TagResponse> call, Response<TagResponse> response) {
                 if(response.isSuccessful()) {
-                    if(response.isSuccessful()){
-                        TagResponse tagResponse = response.body();
-                        long tagId = tagResponse.getTagId();
+                    TagResponse tagResponse = response.body();
+                    if(tagResponse != null){
+                        int tagId = tagResponse.getTagId();
                         showToast("태그 생성 성공 Tag ID : " + tagId);
                     }
                 } else{

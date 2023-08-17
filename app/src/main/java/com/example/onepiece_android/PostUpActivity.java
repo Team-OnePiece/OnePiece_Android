@@ -14,6 +14,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,11 +33,9 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 public class PostUpActivity extends AppCompatActivity {
-
-
     private ActivityPostUpBinding binding;
-
     private ActivityResultLauncher<Intent> galleryLauncher;
     private List<String> enteredTags = new ArrayList<>();
     private TagApi tagApi;
@@ -46,7 +46,6 @@ public class PostUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityPostUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 
         tagApi = new TagApi(this);
         ChipGroup chipGroup = binding.chipGroup;
@@ -126,8 +125,6 @@ public class PostUpActivity extends AppCompatActivity {
         });
 
 
-
-
         binding.tvPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,29 +185,29 @@ public class PostUpActivity extends AppCompatActivity {
         RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), imageFile);
         MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image", imageFile.getName(),requestBody);
 
-       RequestBody placeRequestBody = RequestBody.create(MediaType.parse("text/plain"),binding.etPlace.getText().toString());
+        RequestBody placeRequestBody = RequestBody.create(MediaType.parse("text/plain"),binding.etPlace.getText().toString());
 
-       String accessToken = "Bearer <access-token>";
-       ServerApi serverApi = PostUpRequest.getClient().create(ServerApi.class);
-       Call<PostUpResponse> call = serverApi.postUp(groupId, imagePart, placeRequestBody.toString(), accessToken);
+        String accessToken = "Bearer <access-token>";
+        ServerApi serverApi = PostUpRequest.getClient().create(ServerApi.class);
+        Call<PostUpResponse> call = serverApi.postUp(groupId, imagePart, placeRequestBody.toString(), accessToken);
 
-       call.enqueue(new Callback<PostUpResponse>() {
-           @Override
-           public void onResponse(Call<PostUpResponse> call, Response<PostUpResponse> response) {
-               if(response.isSuccessful()){
-                   PostUpResponse postUpResponse = response.body();
-                   int feedId = postUpResponse.getFeed_id();
-                   Toast.makeText(PostUpActivity.this, "이미지 업로드 성공. Feed ID : " + feedId, Toast.LENGTH_SHORT).show();
-               } else {
-                   Toast.makeText(PostUpActivity.this, "이미지 업로드 실패", Toast.LENGTH_SHORT).show();
-               }
-           }
+        call.enqueue(new Callback<PostUpResponse>() {
+            @Override
+            public void onResponse(Call<PostUpResponse> call, Response<PostUpResponse> response) {
+                if(response.isSuccessful()){
+                    PostUpResponse postUpResponse = response.body();
+                    int feedId = postUpResponse.getFeed_id();
+                    Toast.makeText(PostUpActivity.this, "이미지 업로드 성공. Feed ID : " + feedId, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(PostUpActivity.this, "이미지 업로드 실패", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-           @Override
-           public void onFailure(Call<PostUpResponse> call, Throwable t) {
+            @Override
+            public void onFailure(Call<PostUpResponse> call, Throwable t) {
                 Toast.makeText(PostUpActivity.this,"통신 실패 : " + t.getMessage(), Toast.LENGTH_SHORT).show();
-           }
-       });
+            }
+        });
 
     }
 }
