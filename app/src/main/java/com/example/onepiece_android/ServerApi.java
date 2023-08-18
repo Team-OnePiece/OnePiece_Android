@@ -1,9 +1,18 @@
 package com.example.onepiece_android;
 
+import com.google.gson.annotations.SerializedName;
+
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Multipart;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ServerApi {
@@ -28,5 +37,33 @@ public interface ServerApi {
             @Query("grade") int grade,
             @Query("class_number") int classNumber,
             @Query("number") int number
+    );
+
+    @Multipart
+    @POST("/feed/{groupId}")
+    Call<PostUpResponse> postUp(
+            @Path("groupId") int groupId,
+      @Part MultipartBody.Part image,
+      @Header("Authorization") String authorization,
+            @Query("place") String place
+    );
+
+    @POST("/tag/{feedId}")
+    Call<TagResponse> createTag(
+            @Path("boardId") long feedId,
+            @Header("Authorization") String authorization,
+            @Body TagRequest tagRequest
+    );
+
+    @PATCH("/feed/{feedId}")
+    Call<Void> postModify(
+            @Path("feedId") long feedId,
+            @Body PostModifyRequest request
+    );
+
+    @DELETE("/tag/{tagId}")
+    Call<Void> deleteTag(
+            @Path("tagId") long tagId,
+            @Header("Authorization") String authorization
     );
 }

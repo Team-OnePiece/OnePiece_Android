@@ -13,7 +13,12 @@
         android:theme="@style/Theme.OnePiece_android"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+<<<<<<< Updated upstream
+    <activity
+=======
+
         <activity
+>>>>>>> Stashed changes
             android:name=".AccountNickActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
