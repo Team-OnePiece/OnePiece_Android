@@ -37,7 +37,7 @@
         android:layout_marginEnd="22dp"
         android:layout_marginTop="11dp"
         android:fontFamily="@font/orbit"
-        android:text="확인"
+        android:text="완료"
         android:textColor="@color/gray_800"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
