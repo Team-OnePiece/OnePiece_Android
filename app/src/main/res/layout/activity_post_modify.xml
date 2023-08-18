@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="22dp"/>
+
+
+    <TextView
+        android:id="@+id/tv_feed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="11dp"
+        android:fontFamily="@font/orbit"
+        android:text="피드 수정"
+        android:textColor="@color/gray_800"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_back"
+        app:layout_constraintStart_toEndOf="@+id/img_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_okay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="11dp"
+        android:fontFamily="@font/orbit"
+        android:text="확인"
+        android:textColor="@color/gray_800"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_place"
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:background="@drawable/post_modify_place_border"
+        android:gravity="center"
+        android:inputType="text"
+        android:fontFamily="@font/orbit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_feed"
+        android:layout_marginTop="49dp"/>
+
+    <TextView
+        android:id="@+id/tv_countText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/orbit"
+        android:text="0/10"
+        android:textColor="@color/gray_500"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_place"
+        app:layout_constraintEnd_toEndOf="@+id/et_place"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="21dp"/>
+
+    <TextView
+        android:id="@+id/tv_checktag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/orbit"
+        android:text="태그는 최대 6개,최대 10자까지 작성 가능합니다."
+        android:textSize="12sp"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_place"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="37dp"/>
+
+    <EditText
+        android:id="@+id/et_tag"
+        android:layout_width="343dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/post_modify_tag_border"
+        android:fontFamily="@font/orbit"
+        android:hint="태그를 입력하세요."
+        android:inputType="text"
+        android:outlineProvider="none"
+        android:textColor="@color/gray_800"
+        android:textColorHint="@color/gray_400"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_checktag" />
+
+
+    <TextView
+        android:id="@+id/tv_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/orbit"
+        android:text="+"
+        android:textColor="@color/gray_700"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_tag"
+        app:layout_constraintEnd_toEndOf="@+id/et_tag"
+        app:layout_constraintTop_toTopOf="@+id/et_tag" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_tag">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/img_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginBottom="230dp"
+        android:src="@drawable/add_picture"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
