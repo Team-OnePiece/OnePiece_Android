@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         buttonIsSelected();
     }
 
-
     public void buttonIsSelected() {
         binding.editId.addTextChangedListener(new TextWatcher() {
             @Override
@@ -54,11 +53,57 @@ public class LoginActivity extends AppCompatActivity {
                     binding.btnLogin.setBackgroundResource(R.drawable.login_btn_unselected);
                 }
             }
-
         });
 
+        binding.etPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            binding.btnLogin.setOnClickListener(new View.OnClickListener() {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                updateViewVisibility();
+                if(s.length() > 0 && binding.etPassword.getText().length() > 0) {
+                    binding.btnLogin.setClickable(true);
+                    binding.btnLogin.setBackgroundResource(R.drawable.login_btn_selected);
+                } else {
+                    binding.btnLogin.setClickable(false);
+                    binding.btnLogin.setBackgroundResource(R.drawable.login_btn_unselected);
+                }
+            }
+        });
+
+        binding.etPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                updateViewVisibility();
+                if(s.length() > 0 && binding.editId.getText().length() > 0){
+                    binding.btnLogin.setClickable(true);
+                    binding.btnLogin.setBackgroundResource(R.drawable.login_btn_selected);
+                } else {
+                    binding.btnLogin.setClickable(false);
+                    binding.btnLogin.setBackgroundResource(R.drawable.login_btn_unselected);
+                }
+            }
+        });
+
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), AccountIdActivity.class);
@@ -90,24 +135,19 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
-
-
-    private void LoginCheck(){
-        String userId = binding.editId.getText().toString();
-        String userPassword = binding.etPassword.getText().toString();
-
-        if(userId.length()==0){
-            Toast.makeText(LoginActivity.this, "아이디를 입력하세요.", Toast.LENGTH_SHORT).show();
-        } else if (userPassword.length()==0){
-            Toast.makeText(LoginActivity.this, "비밀번호를 입력하세요.", Toast.LENGTH_SHORT).show();
+    private void updateViewVisibility() {
+        if(binding.editId.getText().length() == 0) {
+            binding.tvCheckid.setVisibility(View.VISIBLE);
         } else {
-            login();
-            Log.d(TAG, "userId : " + userId);
-            Log.d(TAG, "userPassword : " + userPassword);
+            binding.tvCheckid.setVisibility(View.INVISIBLE);
+        }
+
+        if(binding.etPassword.getText().length() == 0){
+            binding.tvCheckpassword.setVisibility(View.VISIBLE);
+        } else {
+            binding.tvCheckpassword.setVisibility(View.INVISIBLE);
         }
     }
-
 
     public void login() {
         String userId = binding.editId.getText().toString();

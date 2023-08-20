@@ -94,6 +94,36 @@
         app:layout_constraintStart_toStartOf="@+id/edit_password"
         app:layout_constraintTop_toBottomOf="@id/edit_password" />
 
+    <TextView
+        android:id="@+id/tv_checkid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/orbit"
+        android:text="아이디를 입력하세요."
+        android:textColor="#FF0E0E"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/edit_password"
+        app:layout_constraintTop_toBottomOf="@id/edit_password" />
+
+    <TextView
+        android:id="@+id/tv_checkpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/orbit"
+        android:text="비밀번호를 입력하세요"
+        android:textColor="#FF0E0E"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/edit_password"
+        app:layout_constraintTop_toBottomOf="@id/edit_password" />
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="320dp"
