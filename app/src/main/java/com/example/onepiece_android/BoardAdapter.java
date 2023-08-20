@@ -1,6 +1,7 @@
 package com.example.onepiece_android;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ import retrofit2.Response;
 
 public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> {
     private RecyclerItemBinding recyclerBinding;
-    private ArrayList<Board> arrayList;
+    private final ArrayList<Board> arrayList;
     public static Long pos;
     Context context;
     String activity;
@@ -88,41 +89,46 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     private void plusReaction(Long pos) {
         ReactionResponse reactionResponse = new ReactionResponse();
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.reaction(pos).enqueue(new Callback<ReactionResponse>() {
+        serverApi.reaction(MainActivity.token, pos).enqueue(new Callback<ReactionResponse>() {
             @Override
             public void onResponse(Call<ReactionResponse> call, Response<ReactionResponse> response) {
                 if (response.isSuccessful()) {
                     recyclerBinding.imgItemReaction.setImageResource(R.drawable.notice_reaction);
                     recyclerBinding.textItemCount.setText(reactionResponse.getStar_counts());
-                    starReaction = reactionResponse.isStar();
+                    starReaction = true;
                 } else {
                     Toast.makeText(context, "반응 등록에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                    Log.d("response", String.valueOf(response.code()));
                 }
             }
             @Override
             public void onFailure(Call<ReactionResponse> call, Throwable t) {
                 Toast.makeText(context, "서버와의 연결에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                Log.d("fail", t.getMessage());
             }
         });
     }
 
     private void deleteReaction(Long pos) {
-        ReactionResponse reactionResponse = new ReactionResponse();
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.deleteReaction(pos).enqueue(new Callback<ReactionResponse>() {
+        serverApi.deleteReaction(MainActivity.token, pos).enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<ReactionResponse> call, Response<ReactionResponse> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
                     recyclerBinding.imgItemReaction.setImageResource(R.drawable.notice_no_reaction);
-                    recyclerBinding.textItemCount.setText(reactionResponse.getStar_counts());
-                    starReaction = reactionResponse.isStar();
+                    int count = Integer.parseInt(recyclerBinding.textItemCount.getText().toString());
+                    count--;
+                    recyclerBinding.textItemCount.setText(String.valueOf(count));
+                    starReaction = false;
                 } else {
                     Toast.makeText(context, "반응 삭제에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                    Log.d("response", String.valueOf(response.code()));
                 }
             }
             @Override
-            public void onFailure(Call<ReactionResponse> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(context, "서버와의 연결에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                Log.d("fail", t.getMessage());
             }
         });
     }

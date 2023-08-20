@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.onepiece_android.databinding.ActivityNoticeBoardBinding;
@@ -84,12 +85,19 @@ public class NoticeBoardActivity extends AppCompatActivity {
         serverApi.readBoard().enqueue(new Callback<ReadBoardResponse>() {  // 여기 수정
             @Override
             public void onResponse(Call<ReadBoardResponse> call, Response<ReadBoardResponse> response) {
-                boardResponse = response.body();
-                startSetPost(boardResponse);
+                if (response.isSuccessful()) {
+                    boardResponse = response.body();
+                    startSetPost(boardResponse);
+                } else {
+                    Toast.makeText(NoticeBoardActivity.this, String.valueOf(response.code()), Toast.LENGTH_SHORT).show();
+                    Log.d("response", String.valueOf(response.code()));
+
+                }
             }
             @Override
             public void onFailure(Call<ReadBoardResponse> call, Throwable t) {
-                Toast.makeText(getBaseContext(), "서버와의 통신에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NoticeBoardActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("fail", t.getMessage());
             }
         });
     }

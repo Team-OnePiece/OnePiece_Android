@@ -27,7 +27,6 @@ public class AccountIdActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.btnAccountIdNext.setOnClickListener(view -> {
-            Log.d("click", "login-next");
             String userId = binding.editAccountId.getText().toString();
             checkId(userId);
         });
@@ -57,11 +56,13 @@ public class AccountIdActivity extends AppCompatActivity {
                         builder.setPositiveButton("확인", (dialogInterface, i) -> {}).show();
                     } else {
                         binding.textIdWrong.setVisibility(View.VISIBLE);
+                        Log.d("response", String.valueOf(response.code()));
                     }
                 }
                 @Override
                 public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
-                    Toast.makeText(getBaseContext(), "서버와의 통신에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AccountIdActivity.this, "서버와의 연결에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                    Log.d("fail", t.getMessage());
                 }
             });
         }

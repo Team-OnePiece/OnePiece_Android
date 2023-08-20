@@ -1,6 +1,5 @@
 package com.example.onepiece_android;
 
-import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -19,7 +18,7 @@ public interface ServerApi {
 
     @GET("/user/id/duplicate")
     Call<Void> idDuplicate(
-            @Query("account_id") String userid
+            @Query("account_id") String account_id
     );
 
     @GET("/user/nickname/duplicate")
@@ -30,7 +29,7 @@ public interface ServerApi {
     @GET("/user/student/id/duplicate")
     Call<Void> studentIdDuplicate(
             @Query("grade") int grade,
-            @Query("class_number") int classNumber,
+            @Query("class_number") int class_number,
             @Query("number") int number
     );
 
@@ -46,11 +45,13 @@ public interface ServerApi {
 
     @POST("/star{feedId}")
     Call<ReactionResponse> reaction(
+            @Header("Authorization") String token,
             @Path("feedId") Long feedId
     );
 
-    @DELETE("/star{feedId}")
-    Call<ReactionResponse> deleteReaction(
+    @DELETE("/star/delete/{feedId}")
+    Call<Void> deleteReaction(
+            @Header("Authorization") String token,
             @Path("feedId") Long feedId
     );
 }
