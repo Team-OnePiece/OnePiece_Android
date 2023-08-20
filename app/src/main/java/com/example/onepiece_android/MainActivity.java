@@ -6,8 +6,8 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    // 토큰 임시 저장
-    public static String token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZW9ldW4yNDIyIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTY5MTk1MDgyMywiZXhwIjoxNjkxOTU4MDIzfQ.URp1S0MQwovzeQ2vfxbm6gn5o4MwDD4dvCkFjRSxKIc";
+    // 로그인 작성 후 삭제
+    public static String token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
