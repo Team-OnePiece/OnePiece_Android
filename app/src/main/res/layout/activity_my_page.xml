@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_000"
+    tools:context=".MyPageActivity">
+
+    <ImageView
+        android:id="@+id/img_my_back"
+        style="@style/account_img_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_my"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="마이페이지"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/orbit"
+        app:layout_constraintStart_toEndOf="@id/img_my_back"
+        app:layout_constraintTop_toTopOf="@id/img_my_back"
+        app:layout_constraintBottom_toBottomOf="@id/img_my_back" />
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_my_profile"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:cardCornerRadius="70dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_my">
+        <ImageView
+            android:id="@+id/img_my_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/default_profile"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/text_my_nickname"
+        style="@style/my_page_text"
+        android:text="ㅇㅇ님,"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@id/card_my_profile"
+        app:layout_constraintEnd_toEndOf="@id/card_my_profile"
+        app:layout_constraintTop_toBottomOf="@id/card_my_profile"/>
+
+    <TextView
+        android:id="@+id/text_my_content"
+        style="@style/my_page_text"
+        android:text="오늘은\n어떤 하루를 보내셨나요?"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/text_my_nickname"
+        app:layout_constraintEnd_toEndOf="@id/text_my_nickname"
+        app:layout_constraintTop_toBottomOf="@id/text_my_nickname" />
+
+    <Button
+        android:id="@+id/btn_my_modify"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@drawable/edit_background"
+        android:text="수정하기"
+        android:textSize="17sp"
+        android:fontFamily="@font/orbit"
+        android:textColor="@color/gray_700"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
