@@ -31,7 +31,8 @@ public class AccountPwActivity extends AppCompatActivity {
             binding.textPwWrong.setVisibility(View.VISIBLE);
         } else if (userPassword.equals(userPasswordCheck)) {
             SignUpRequest signUpRequest = new SignUpRequest();
-            signUpRequest.setUserPassword(userPassword);
+            signUpRequest.setPassword(userPassword);
+            signUpRequest.setPassword_valid(userPasswordCheck);
             Intent intent = new Intent(getBaseContext(), AccountStudentActivity.class);
             startActivity(intent);
         } else {

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import com.example.onepiece_android.databinding.ActivityAccountNickBinding;
@@ -43,14 +44,18 @@ public class AccountNickActivity extends AppCompatActivity {
                         SignUpRequest signUpRequest = new SignUpRequest();
                         signUpRequest.setNickname(nickname);
                         signUp();
-                    } else {
+                    } else if (response.code() == 409) {
                         builder.setMessage("이미 사용된 별명입니다.");
                         builder.setPositiveButton("확인", (dialogInterface, i) -> {}).show();
+                    } else {
+                        binding.textNickWrong.setVisibility(View.VISIBLE);
+                        Log.d("response", String.valueOf(response.code()));
                     }
                 }
                 @Override
                 public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
                     Toast.makeText(getBaseContext(), "서버와의 통신에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                    Log.d("fail", t.getMessage());
                 }
             });
         }
@@ -67,11 +72,13 @@ public class AccountNickActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     Toast.makeText(getBaseContext(), "회원가입에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                    Log.d("response", String.valueOf(response.code()));
                 }
             }
             @Override
             public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
                 Toast.makeText(getBaseContext(), "서버와의 통신에 실패하였습니다", Toast.LENGTH_SHORT).show();
+                Log.d("fail", t.getMessage());
             }
         });
     }
