@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+  
     <ImageView
         android:id="@+id/img_back"
         android:layout_width="16dp"
@@ -14,7 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginStart="22dp"/>
-
 
     <TextView
         android:id="@+id/tv_feed"
@@ -130,7 +129,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp" />
 
-
     </LinearLayout>
 
     <TextView
@@ -148,14 +146,18 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/img_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/add_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_checkgroup" />
 
-
+</androidx.constraintlayout.widget.ConstraintLayout>
+        android:src="@drawable/add_picture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="37dp"
+        android:layout_marginBottom="230dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

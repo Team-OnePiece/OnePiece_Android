@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +15,19 @@
         android:theme="@style/Theme.OnePiece_android"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NoticeBoardActivity"
+            android:exported="false" />
+        <activity>
+            android:name=".MyPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileModifyActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".AccountNickActivity"
             android:exported="false"

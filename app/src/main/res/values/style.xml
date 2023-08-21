@@ -85,4 +85,21 @@
         <item name="android:layout_marginStart">3dp</item>
         <item name="android:layout_marginTop">7dp</item>
     </style>
+    <style name="notice_text_tag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/tag_background</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/orbit</item>
+        <item name="android:textColor">@color/gray_700</item>
+        <item name="android:layout_marginEnd">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+    <style name="my_page_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:fontFamily">@font/orbit</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>
