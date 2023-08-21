@@ -66,7 +66,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
             recyclerBinding.layItemTag.addView(textView);
         }
 
-        if (arrayList.get(position).getNickname().equals(MainActivity.token)) {  // MainActivity.token은 프로필 수정 병합 후 수정 예정 (프로필 수정 UserInfo() 함수 속 닉네임)
+        if (arrayList.get(position).getNickname().equals(NoticeBoardActivity.nickname)) {
             recyclerBinding.imgItemMore.setVisibility(View.VISIBLE);
         }
 
@@ -89,7 +89,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     private void plusReaction(Long pos) {
         ReactionResponse reactionResponse = new ReactionResponse();
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.reaction(MainActivity.token, pos).enqueue(new Callback<ReactionResponse>() {
+        serverApi.reaction(LoginActivity.token, pos).enqueue(new Callback<ReactionResponse>() {
             @Override
             public void onResponse(Call<ReactionResponse> call, Response<ReactionResponse> response) {
                 if (response.isSuccessful()) {
@@ -111,7 +111,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
 
     private void deleteReaction(Long pos) {
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.deleteReaction(MainActivity.token, pos).enqueue(new Callback<Void>() {
+        serverApi.deleteReaction(LoginActivity.token, pos).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {

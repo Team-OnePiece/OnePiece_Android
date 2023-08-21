@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray_000"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -21,7 +21,7 @@
         android:id="@+id/id_onepiece"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:fontFamily="@font/orbit"
         android:text="One Piece"
         android:textColor="@color/gray_700"
@@ -34,9 +34,9 @@
         android:id="@+id/edit_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="15dp"
         android:inputType="textPassword"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,9 +48,9 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="18dp"
             android:background="@drawable/edit_background"
             android:fontFamily="@font/orbit"
             android:hint="비밀번호"
@@ -66,9 +66,9 @@
         android:id="@+id/edit_id"
         android:layout_width="0dp"
         android:layout_height="44dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="18dp"
         android:background="@drawable/edit_background"
         android:fontFamily="@font/orbit"
         android:hint="아이디"
@@ -157,7 +157,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
-
     <TextView
         android:id="@+id/tv_join"
         android:layout_width="wrap_content"
@@ -170,7 +169,7 @@
         android:fontFamily="@font/orbit"
         android:gravity="center"
         android:text="회원가입"
-        android:textColor="#FF0E0E"
+        android:textColor="@color/red"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/text_member"
         app:layout_constraintTop_toBottomOf="@id/btn_login" />

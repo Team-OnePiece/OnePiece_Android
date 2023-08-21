@@ -35,7 +35,7 @@ public class MyPageActivity extends AppCompatActivity {
 
     public void userInfo() {
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.userInfo(MainActivity.token).enqueue(new Callback<UserInfoResponse>() {
+        serverApi.userInfo(LoginActivity.token).enqueue(new Callback<UserInfoResponse>() {
             @Override
             public void onResponse(Call<UserInfoResponse> call, Response<UserInfoResponse> response) {
                 if (response.isSuccessful()) {

@@ -68,7 +68,7 @@ public class AccountNickActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 if (response.isSuccessful()) {
-                    Intent intent = new Intent(getBaseContext(), MainActivity.class); // 로그인 완료 후 변경 예정
+                    Intent intent = new Intent(getBaseContext(), LoginActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getBaseContext(), "회원가입에 실패하였습니다", Toast.LENGTH_SHORT).show();

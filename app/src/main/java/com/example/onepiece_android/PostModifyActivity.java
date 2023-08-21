@@ -28,7 +28,7 @@ public class PostModifyActivity extends AppCompatActivity {
         binding.tvOkay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(PostModifyActivity.this, MainActivity.class);
+                Intent intent = new Intent(PostModifyActivity.this, NoticeBoardActivity.class);
                 startActivity(intent);
                 finish();
             }

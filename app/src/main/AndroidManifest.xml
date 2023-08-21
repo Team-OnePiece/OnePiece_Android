@@ -15,17 +15,19 @@
         android:theme="@style/Theme.OnePiece_android"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-<<<<<<< Updated upstream
+        <activity
+            android:name=".PostModifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostUpActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-=======
-
->>>>>>> Stashed changes
         <activity
             android:name=".NoticeBoardActivity"
             android:exported="false" />
-        <activity>
+        <activity
             android:name=".MyPageActivity"
             android:exported="false" />
         <activity
@@ -54,9 +56,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

@@ -14,6 +14,7 @@ public class AccountPwActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAccountPwBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         binding.editAccountPw.setSelection(binding.editAccountPw.length());
         binding.editAccountPwCheck.setSelection(binding.editAccountPwCheck.length());
 

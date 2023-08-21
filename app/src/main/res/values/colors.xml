@@ -2,7 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_red">#FF0E0E</color>
     <color name="background">#F1EEE9</color>
     <color name="main_color1">#50574B</color>
     <color name="main_color2">#F6CAC9</color>
@@ -17,5 +16,4 @@
     <color name="gray_800">#343434</color>
     <color name="gray_900">#121212</color>
     <color name="red">#FF0000</color>
-    <color name="clear">#FFFFFF</color>
 </resources>

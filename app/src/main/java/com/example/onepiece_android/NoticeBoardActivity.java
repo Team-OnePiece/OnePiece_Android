@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.onepiece_android.databinding.ActivityNoticeBoardBinding;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -25,6 +26,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
     BoardAdapter boardAdapter;
     ArrayList<Board> arrayList;
     ReadBoardResponse boardResponse;
+    public static String nickname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +40,16 @@ public class NoticeBoardActivity extends AppCompatActivity {
         boardAdapter = new BoardAdapter(arrayList, getApplicationContext(), "NoticeBoardActivity");
         binding.recyclerNotice.setAdapter(boardAdapter);
 
+        userInfo();
         startPage();
 
         binding.imgNoticeAdd.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), MainActivity.class); // 게시물 생성 완료 후 수정
+            Intent intent = new Intent(getBaseContext(), PostUpActivity.class); // 게시물 생성 완료 후 수정
             startActivity(intent);
         });
 
         binding.imgNoticeMore.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), MainActivity.class); // 프로필 수정 완료 후 수정 예정
+            Intent intent = new Intent(getBaseContext(), ProfileModifyActivity.class);
             startActivity(intent);
         });
     }
@@ -96,8 +99,27 @@ public class NoticeBoardActivity extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<ReadBoardResponse> call, Throwable t) {
-                Toast.makeText(NoticeBoardActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(NoticeBoardActivity.this, "서버와의 연결에 실패하였습니다", Toast.LENGTH_SHORT).show();
                 Log.d("fail", t.getMessage());
+            }
+        });
+    }
+
+    public void userInfo() {
+        ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
+        serverApi.userInfo(LoginActivity.token).enqueue(new Callback<UserInfoResponse>() {
+            @Override
+            public void onResponse(Call<UserInfoResponse> call, Response<UserInfoResponse> response) {
+                if (response.isSuccessful()) {
+                    UserInfoResponse userInfo = response.body();
+                    nickname = userInfo.getNickname();
+                } else {
+                    Toast.makeText(getBaseContext(), "정보를 불러오는데 실패하였습니다", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<UserInfoResponse> call, Throwable t) {
+                Toast.makeText(getBaseContext(), "서버와의 연동에 실패하였습니다", Toast.LENGTH_SHORT).show();
             }
         });
     }

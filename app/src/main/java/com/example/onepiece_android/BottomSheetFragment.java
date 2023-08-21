@@ -26,7 +26,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         binding = FragmentBottomSheetBinding.inflate(getLayoutInflater());
 
         binding.bottomSheetModify.setOnClickListener(view -> {
-            Intent intent = new Intent(binding.getRoot().getContext(), MainActivity.class); // 게시글 수정 완료 후 수정 예정
+            Intent intent = new Intent(binding.getRoot().getContext(), PostModifyActivity.class);
             dismiss();
             startActivity(intent);
         });
@@ -37,7 +37,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
 
             builder.setPositiveButton("확인", (dialogInterface, i) -> {
                 ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-                serverApi.deleteBoard(MainActivity.token, BoardAdapter.pos).enqueue(new Callback<Void>() {
+                serverApi.deleteBoard(LoginActivity.token, BoardAdapter.pos).enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
                         AlertDialog.Builder check = new AlertDialog.Builder(view.getContext());

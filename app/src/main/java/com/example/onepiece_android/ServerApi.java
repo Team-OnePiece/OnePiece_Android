@@ -91,8 +91,6 @@ public interface ServerApi {
             @Query("place") String place
     );
 
-
-
     @POST("/tag/{feedId}")
     Call<TagResponse> createTag(
             @Path("boardId") long feedId,

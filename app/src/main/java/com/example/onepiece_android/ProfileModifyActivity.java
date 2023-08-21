@@ -57,7 +57,7 @@ public class ProfileModifyActivity extends AppCompatActivity {
 
     public void userInfo() {
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.userInfo(MainActivity.token).enqueue(new Callback<UserInfoResponse>() {
+        serverApi.userInfo(LoginActivity.token).enqueue(new Callback<UserInfoResponse>() {
             @Override
             public void onResponse(Call<UserInfoResponse> call, Response<UserInfoResponse> response) {
                 if (response.isSuccessful()) {
@@ -102,7 +102,7 @@ public class ProfileModifyActivity extends AppCompatActivity {
 
     public void changeNick(String nickname) {
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.nicknameModify(MainActivity.token, nickname).enqueue(new Callback<Void>() {
+        serverApi.nicknameModify(LoginActivity.token, nickname).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ProfileModifyActivity.this);
@@ -133,7 +133,7 @@ public class ProfileModifyActivity extends AppCompatActivity {
         MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image", imageFile.getName(), requestFile);
 
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.profileImageUpload(MainActivity.token, imagePart).enqueue(new Callback<Void>() {
+        serverApi.profileImageUpload(LoginActivity.token, imagePart).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
