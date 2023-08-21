@@ -39,7 +39,15 @@ public class PostUpActivity extends AppCompatActivity {
     private ActivityResultLauncher<Intent> galleryLauncher;
     private List<String> enteredTags = new ArrayList<>();
     private TagApi tagApi;
+    private ServerApi serverApi;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = ActivityPostUpBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        tagApi = new TagApi(this);
+        serverApi = PostUpRequest.getClient().create(ServerApi.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -53,8 +61,8 @@ public class PostUpActivity extends AppCompatActivity {
         TextView tvPlus = binding.tvPlus;
         tvPlus.setOnClickListener(v -> {
             String tagText = binding.etTag.getText().toString().trim();
-            if(!tagText.isEmpty()){
-                if(enteredTags.size() < 6 && tagText.length() <= 5){
+            if (!tagText.isEmpty()) {
+                if (enteredTags.size() < 6 && tagText.length() <= 5) {
                     Chip chip = new Chip(PostUpActivity.this);
                     chip.setText(tagText);
                     chip.setCloseIconVisible(true);
@@ -84,15 +92,13 @@ public class PostUpActivity extends AppCompatActivity {
                 }
             }
         });
-
+      
         ServerApi serverApi = PostUpRequest.getClient().create(ServerApi.class);
-
 
         binding.tvOkay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String place = binding.etPlace.getText().toString();
-
 
                 if(!place.isEmpty()){
                     RequestBody placeRequestBody = RequestBody.create(MediaType.parse("text/plain"), place);
@@ -101,12 +107,11 @@ public class PostUpActivity extends AppCompatActivity {
                     String accessToken = "Bearer <access-token>";
                     int groupId = 1;
 
-
                     Call<PostUpResponse> call = serverApi.postUp(groupId, imagePart, place, accessToken);
 
                     call.enqueue(new Callback<PostUpResponse>() {
                         @Override
-                        public void onResponse(Call<PostUpResponse> call, Response<PostUpResponse> response) {
+                        public void onResponse(Call<PostUpResponse> call, Response<PostUpResponse> response) {                            
                             if(response.isSuccessful()) {
                                 int feedId = response.body().getFeed_id();
                                 Toast.makeText(PostUpActivity.this, "서버 응답 성공 Feed ID : " + feedId, Toast.LENGTH_SHORT).show();
@@ -126,8 +131,6 @@ public class PostUpActivity extends AppCompatActivity {
             }
         });
 
-
-
         TextView textView = binding.tvSpinner;
         binding.spGroup.setAdapter(ArrayAdapter.createFromResource(this, R.array.arr_group, android.R.layout.simple_spinner_item));
         binding.spGroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -145,6 +148,7 @@ public class PostUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String tagText = binding.etTag.getText().toString().trim();
+              
                 if(!tagText.isEmpty()){
                     enteredTags.add(tagText);
                     Toast.makeText(PostUpActivity.this, "태그가 추가되었습니다." + tagText, Toast.LENGTH_SHORT).show();

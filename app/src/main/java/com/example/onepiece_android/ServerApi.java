@@ -1,5 +1,7 @@
 package com.example.onepiece_android;
 
+import com.google.gson.annotations.SerializedName;
+
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -90,8 +92,6 @@ public interface ServerApi {
       @Header("Authorization") String authorization,
             @Query("place") String place
     );
-
-
 
     @POST("/tag/{feedId}")
     Call<TagResponse> createTag(

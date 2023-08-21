@@ -15,13 +15,9 @@
         android:theme="@style/Theme.OnePiece_android"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-<<<<<<< Updated upstream
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-=======
-
->>>>>>> Stashed changes
         <activity
             android:name=".NoticeBoardActivity"
             android:exported="false" />
