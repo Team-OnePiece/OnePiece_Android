@@ -1,13 +1,10 @@
 package com.example.onepiece_android;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -35,14 +32,10 @@ public class LoginActivity extends AppCompatActivity {
         binding.editId.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.length() > 0) {
@@ -58,14 +51,10 @@ public class LoginActivity extends AppCompatActivity {
         binding.etPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 updateViewVisibility();
@@ -82,14 +71,10 @@ public class LoginActivity extends AppCompatActivity {
         binding.etPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 updateViewVisibility();
@@ -103,25 +88,19 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AccountIdActivity.class);
-                startActivity(intent);
-            }
+        binding.btnLogin.setOnClickListener(v -> {
+            login();
+            Intent intent = new Intent(getApplicationContext(), AccountIdActivity.class);
+            startActivity(intent);
         });
 
         binding.etPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.length() > 0) {
@@ -166,7 +145,6 @@ public class LoginActivity extends AppCompatActivity {
                     binding.tvCheck.setVisibility(View.VISIBLE);
                 }
             }
-
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Toast.makeText(LoginActivity.this, "통신 실패", Toast.LENGTH_SHORT).show();

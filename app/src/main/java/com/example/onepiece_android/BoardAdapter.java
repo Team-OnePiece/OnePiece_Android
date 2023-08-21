@@ -41,9 +41,8 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     public BoardAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item, parent, false);
         recyclerBinding = RecyclerItemBinding.bind(view);
-        ViewHolder holder = new ViewHolder(view);
 
-        return holder;
+        return new ViewHolder(view);
     }
 
     @Override

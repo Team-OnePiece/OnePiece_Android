@@ -18,20 +18,12 @@ public class PostModifyActivity extends AppCompatActivity {
         binding = ActivityPostModifyBinding.inflate(getLayoutInflater());
         setContentView(R.layout.activity_post_modify);
 
-        binding.imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        binding.imgBack.setOnClickListener(v -> finish());
 
-        binding.tvOkay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(PostModifyActivity.this, NoticeBoardActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        binding.tvOkay.setOnClickListener(v -> {
+            Intent intent = new Intent(PostModifyActivity.this, NoticeBoardActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 }

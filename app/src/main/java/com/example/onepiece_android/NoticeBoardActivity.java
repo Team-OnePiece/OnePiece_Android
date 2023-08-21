@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.onepiece_android.databinding.ActivityNoticeBoardBinding;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -85,7 +84,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
 
     private void startPage() {
         ServerApi serverApi = ApiProvider.getInstance().create(ServerApi.class);
-        serverApi.readBoard().enqueue(new Callback<ReadBoardResponse>() {  // 여기 수정
+        serverApi.readBoard().enqueue(new Callback<ReadBoardResponse>() {
             @Override
             public void onResponse(Call<ReadBoardResponse> call, Response<ReadBoardResponse> response) {
                 if (response.isSuccessful()) {

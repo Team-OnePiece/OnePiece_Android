@@ -132,32 +132,26 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_checkgroup"
+        android:id="@+id/tv_photocheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="43dp"
         android:fontFamily="@font/orbit"
         android:text="사진을 추가하세요"
         android:textColor="@color/gray_900"
         android:textSize="12sp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/img_add"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:src="@drawable/add_picture"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_checkgroup" />
+        app:layout_constraintStart_toStartOf="@id/tv_photocheck"
+        app:layout_constraintTop_toBottomOf="@+id/tv_photocheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-        android:src="@drawable/add_picture"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="37dp"
-        android:layout_marginBottom="230dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
