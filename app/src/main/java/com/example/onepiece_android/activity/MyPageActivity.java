@@ -1,4 +1,4 @@
-package com.example.onepiece_android;
+package com.example.onepiece_android.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.onepiece_android.ApiProvider;
+import com.example.onepiece_android.ServerApi;
+import com.example.onepiece_android.UserInfoResponse;
 import com.example.onepiece_android.databinding.ActivityMyPageBinding;
 
 import retrofit2.Call;

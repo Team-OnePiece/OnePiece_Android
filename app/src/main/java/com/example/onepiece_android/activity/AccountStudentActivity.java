@@ -1,4 +1,4 @@
-package com.example.onepiece_android;
+package com.example.onepiece_android.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.onepiece_android.ApiProvider;
+import com.example.onepiece_android.ServerApi;
+import com.example.onepiece_android.SignUpRequest;
 import com.example.onepiece_android.databinding.ActivityAccountStudentBinding;
 
 import retrofit2.Call;

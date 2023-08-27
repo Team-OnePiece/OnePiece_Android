@@ -1,11 +1,11 @@
-package com.example.onepiece_android;
+package com.example.onepiece_android.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
+import com.example.onepiece_android.R;
 import com.example.onepiece_android.databinding.ActivityPostModifyBinding;
 
 public class PostModifyActivity extends AppCompatActivity {

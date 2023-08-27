@@ -1,4 +1,4 @@
-package com.example.onepiece_android;
+package com.example.onepiece_android.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +8,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.onepiece_android.ApiProvider;
+import com.example.onepiece_android.Board;
+import com.example.onepiece_android.BoardAdapter;
+import com.example.onepiece_android.ReadBoardResponse;
+import com.example.onepiece_android.ServerApi;
+import com.example.onepiece_android.UserInfoResponse;
 import com.example.onepiece_android.databinding.ActivityNoticeBoardBinding;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -43,7 +49,7 @@ public class NoticeBoardActivity extends AppCompatActivity {
         startPage();
 
         binding.imgNoticeAdd.setOnClickListener(view -> {
-            Intent intent = new Intent(getBaseContext(), PostUpActivity.class); // 게시물 생성 완료 후 수정
+            Intent intent = new Intent(getBaseContext(), PostUpActivity.class);
             startActivity(intent);
         });
 

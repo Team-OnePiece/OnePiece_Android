@@ -1,4 +1,4 @@
-package com.example.onepiece_android;
+package com.example.onepiece_android.activity;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -15,6 +15,11 @@ import android.provider.MediaStore;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.onepiece_android.PostUpRequest;
+import com.example.onepiece_android.PostUpResponse;
+import com.example.onepiece_android.R;
+import com.example.onepiece_android.ServerApi;
+import com.example.onepiece_android.TagApi;
 import com.example.onepiece_android.databinding.ActivityPostUpBinding;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;

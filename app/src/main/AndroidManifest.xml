@@ -16,38 +16,38 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".PostModifyActivity"
+            android:name=".activity.PostModifyActivity"
             android:exported="false" />
         <activity
-            android:name=".PostUpActivity"
+            android:name=".activity.PostUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".NoticeBoardActivity"
+            android:name=".activity.NoticeBoardActivity"
             android:exported="false" />
         <activity
-            android:name=".MyPageActivity"
+            android:name=".activity.MyPageActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileModifyActivity"
+            android:name=".activity.ProfileModifyActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".AccountNickActivity"
+            android:name=".activity.AccountNickActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".AccountStudentActivity"
+            android:name=".activity.AccountStudentActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".AccountPwActivity"
+            android:name=".activity.AccountPwActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".AccountIdActivity"
+            android:name=".activity.AccountIdActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

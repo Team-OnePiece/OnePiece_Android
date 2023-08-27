@@ -1,4 +1,4 @@
-package com.example.onepiece_android;
+package com.example.onepiece_android.activity;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.onepiece_android.ApiProvider;
+import com.example.onepiece_android.ServerApi;
+import com.example.onepiece_android.UserInfoResponse;
 import com.example.onepiece_android.databinding.ActivityProfileModifyBinding;
 
 import java.io.File;

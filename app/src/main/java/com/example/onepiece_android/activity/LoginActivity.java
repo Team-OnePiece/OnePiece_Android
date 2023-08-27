@@ -1,4 +1,4 @@
-package com.example.onepiece_android;
+package com.example.onepiece_android.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -8,6 +8,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.onepiece_android.ApiProvider;
+import com.example.onepiece_android.LoginRequest;
+import com.example.onepiece_android.LoginResponse;
+import com.example.onepiece_android.R;
+import com.example.onepiece_android.ServerApi;
 import com.example.onepiece_android.databinding.ActivityLoginBinding;
 
 import retrofit2.Call;

@@ -2,6 +2,7 @@ package com.example.onepiece_android;
 
 public class LoginResponse {
 
+
     private String access_token;
 
     public LoginResponse(String accessToken) {

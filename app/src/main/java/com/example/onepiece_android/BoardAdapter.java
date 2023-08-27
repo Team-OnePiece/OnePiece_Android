@@ -13,8 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.onepiece_android.activity.LoginActivity;
+import com.example.onepiece_android.activity.NoticeBoardActivity;
 import com.example.onepiece_android.databinding.RecyclerItemBinding;
-
 
 import java.util.ArrayList;
 
@@ -100,6 +101,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
                     Log.d("response", String.valueOf(response.code()));
                 }
             }
+
             @Override
             public void onFailure(Call<ReactionResponse> call, Throwable t) {
                 Toast.makeText(context, "서버와의 연결에 실패하였습니다", Toast.LENGTH_SHORT).show();
@@ -124,6 +126,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
                     Log.d("response", String.valueOf(response.code()));
                 }
             }
+
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(context, "서버와의 연결에 실패하였습니다", Toast.LENGTH_SHORT).show();
